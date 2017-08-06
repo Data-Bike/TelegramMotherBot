@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "TelegramBotManager",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Telegram Bot Manager",
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
