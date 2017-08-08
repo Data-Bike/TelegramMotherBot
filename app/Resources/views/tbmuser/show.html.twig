@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tbmuser</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ tbmUser.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ tbmUser.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Languagecode</th>
+                <td>{{ tbmUser.languageCode }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ tbmUser.username }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tbmuser_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tbmuser_edit', { 'id': tbmUser.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

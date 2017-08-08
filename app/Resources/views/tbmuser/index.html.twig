@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tbmusers list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Languagecode</th>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tbmUser in tbmUsers %}
+            <tr>
+                <td><a href="{{ path('tbmuser_show', { 'id': tbmUser.id }) }}">{{ tbmUser.firstName }}</a></td>
+                <td>{{ tbmUser.lastName }}</td>
+                <td>{{ tbmUser.languageCode }}</td>
+                <td>{{ tbmUser.username }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tbmuser_show', { 'id': tbmUser.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tbmuser_edit', { 'id': tbmUser.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tbmuser_new') }}">Create a new tbmUser</a>
+        </li>
+    </ul>
+{% endblock %}

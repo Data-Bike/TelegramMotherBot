@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TbmRequest" table="tbm_request">
+    <indexes>
+      <index name="message" columns="message"/>
+      <index name="edited_message" columns="edited_message"/>
+    </indexes>
+    <id name="updateId" type="integer" column="update_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="message" type="integer" column="message" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+    <field name="editedMessage" type="integer" column="edited_message" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

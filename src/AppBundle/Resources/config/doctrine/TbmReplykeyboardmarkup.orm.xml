@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TbmReplykeyboardmarkup" table="tbm_replykeyboardmarkup">
+    <unique-constraints>
+      <unique-constraint name="id_UNIQUE" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="resizeKeyboard" type="boolean" column="resize_keyboard" nullable="true"/>
+    <field name="oneTimeKeyboard" type="boolean" column="one_time_keyboard" nullable="true"/>
+    <field name="selective" type="boolean" column="selective" nullable="true"/>
+    <many-to-many field="keyboardbutton" target-entity="TbmKeyboardbutton" inversed-by="replykeyboardmarkup" fetch="LAZY">
+      <join-table name="tbm_replykeyboardmarkup_keyboard">
+        <join-columns>
+          <join-column name="ReplyKeyboardMarkup_id" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="KeyboardButton_id" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

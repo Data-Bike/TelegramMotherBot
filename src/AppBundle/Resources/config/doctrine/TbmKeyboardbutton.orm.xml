@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TbmKeyboardbutton" table="tbm_keyboardbutton">
+    <unique-constraints>
+      <unique-constraint name="id_UNIQUE" columns="id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="text" type="string" column="text" length="45" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="requestContact" type="boolean" column="request_contact" nullable="true"/>
+    <field name="requestLocation" type="boolean" column="request_location" nullable="true"/>
+    <many-to-many field="replykeyboardmarkup" target-entity="TbmReplykeyboardmarkup" mapped-by="keyboardbutton" fetch="LAZY"/>
+  </entity>
+</doctrine-mapping>
