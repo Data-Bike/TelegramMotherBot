@@ -98,4 +98,3 @@ class TbmUserprofilephotos
         return $this->photosizeFile;
     }
 }
-

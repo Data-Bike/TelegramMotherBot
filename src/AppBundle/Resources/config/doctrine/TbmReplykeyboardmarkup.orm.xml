@@ -10,15 +10,5 @@
     <field name="resizeKeyboard" type="boolean" column="resize_keyboard" nullable="true"/>
     <field name="oneTimeKeyboard" type="boolean" column="one_time_keyboard" nullable="true"/>
     <field name="selective" type="boolean" column="selective" nullable="true"/>
-    <many-to-many field="keyboardbutton" target-entity="TbmKeyboardbutton" inversed-by="replykeyboardmarkup" fetch="LAZY">
-      <join-table name="tbm_replykeyboardmarkup_keyboard">
-        <join-columns>
-          <join-column name="ReplyKeyboardMarkup_id" referenced-column-name="id"/>
-        </join-columns>
-        <inverse-join-columns>
-          <join-column name="KeyboardButton_id" referenced-column-name="id"/>
-        </inverse-join-columns>
-      </join-table>
-    </many-to-many>
   </entity>
 </doctrine-mapping>

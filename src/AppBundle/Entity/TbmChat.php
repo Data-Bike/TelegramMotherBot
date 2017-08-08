@@ -297,5 +297,19 @@ class TbmChat
     {
         return $this->chat;
     }
-}
+    /**
+     * @var integer
+     */
+    private $chatId;
 
+
+    /**
+     * Get chatId
+     *
+     * @return integer
+     */
+    public function getChatId()
+    {
+        return $this->chatId;
+    }
+}

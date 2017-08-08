@@ -12,15 +12,5 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <many-to-many field="photosizeFile" target-entity="TbmPhotosize" inversed-by="userprofilephotos" fetch="LAZY">
-      <join-table name="tbm_userprofilephotos_has_photosize">
-        <join-columns>
-          <join-column name="UserProfilePhotos_id" referenced-column-name="id"/>
-        </join-columns>
-        <inverse-join-columns>
-          <join-column name="PhotoSize_file_id" referenced-column-name="file_id"/>
-        </inverse-join-columns>
-      </join-table>
-    </many-to-many>
   </entity>
 </doctrine-mapping>

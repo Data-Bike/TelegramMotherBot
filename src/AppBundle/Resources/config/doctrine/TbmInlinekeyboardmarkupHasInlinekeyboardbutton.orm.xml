@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TbmInlinekeyboardmarkupHasInlinekeyboardbutton" table="tbm_inlinekeyboardmarkup_has_inlinekeyboardbutton">
+    <indexes>
+      <index name="fk_InlineKeyboardMarkup_has_InlineKeyboardButton_InlineKeyb_idx" columns="InlineKeyboardButton_id"/>
+      <index name="fk_InlineKeyboardMarkup_has_InlineKeyboardButton_InlineKeyb_idx1" columns="InlineKeyboardMarkup_id"/>
+    </indexes>
+    <id name="inlinekeyboardmarkupId" type="integer" column="InlineKeyboardMarkup_id"/>
+    <id name="inlinekeyboardbuttonId" type="integer" column="InlineKeyboardButton_id"/>
+    <field name="row" type="integer" column="Row" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

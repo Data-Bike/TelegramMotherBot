@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="AppBundle\Entity\TbmReplykeyboardmarkupKeyboard" table="tbm_replykeyboardmarkup_keyboard">
+    <indexes>
+      <index name="fk_ReplyKeyboardMarkup_has_KeyboardButton_KeyboardButton1_idx" columns="KeyboardButton_id"/>
+      <index name="fk_ReplyKeyboardMarkup_has_KeyboardButton_ReplyKeyboardMark_idx" columns="ReplyKeyboardMarkup_id"/>
+    </indexes>
+    <id name="replykeyboardmarkupId" type="integer" column="ReplyKeyboardMarkup_id"/>
+    <id name="keyboardbuttonId" type="integer" column="KeyboardButton_id"/>
+    <field name="row" type="integer" column="Row" nullable="true">
+      <options>
+        <option name="unsigned">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

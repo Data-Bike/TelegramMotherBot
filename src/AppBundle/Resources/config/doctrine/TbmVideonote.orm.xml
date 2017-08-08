@@ -4,7 +4,9 @@
     <indexes>
       <index name="thumb" columns="thumb"/>
     </indexes>
-    <id name="file" association-key="true"/>
+    <id name="fileId" type="integer" column="file_id">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="length" type="integer" column="length" nullable="true">
       <options>
         <option name="unsigned"/>
@@ -25,10 +27,5 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <one-to-one field="file" target-entity="TbmMessage" fetch="LAZY">
-      <join-columns>
-        <join-column name="file_id" referenced-column-name="video_note"/>
-      </join-columns>
-    </one-to-one>
   </entity>
 </doctrine-mapping>

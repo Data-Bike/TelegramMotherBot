@@ -139,4 +139,3 @@ class TbmVenue
         return $this->id;
     }
 }
-
