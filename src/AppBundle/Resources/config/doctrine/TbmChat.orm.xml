@@ -7,7 +7,9 @@
     <unique-constraints>
       <unique-constraint name="id_UNIQUE" columns="chat_id"/>
     </unique-constraints>
-    <id name="chat" association-key="true"/>
+    <id name="chatId" type="integer" column="chat_id">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="type" type="string" column="type" length="45" nullable="true">
       <options>
         <option name="fixed"/>
@@ -49,10 +51,5 @@
         <option name="fixed"/>
       </options>
     </field>
-    <one-to-one field="chat" target-entity="TbmMessage" fetch="LAZY">
-      <join-columns>
-        <join-column name="chat_id" referenced-column-name="forward_from_chat"/>
-      </join-columns>
-    </one-to-one>
   </entity>
 </doctrine-mapping>

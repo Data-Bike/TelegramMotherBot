@@ -4,7 +4,9 @@
     <unique-constraints>
       <unique-constraint name="file_id_UNIQUE" columns="file_id"/>
     </unique-constraints>
-    <id name="file" association-key="true"/>
+    <id name="fileId" type="integer" column="file_id">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="width" type="integer" column="width" nullable="true">
       <options>
         <option name="unsigned"/>
@@ -20,12 +22,5 @@
         <option name="unsigned"/>
       </options>
     </field>
-    <one-to-one field="file" target-entity="TbmVideonote" fetch="LAZY">
-      <join-columns>
-        <join-column name="file_id" referenced-column-name="thumb"/>
-      </join-columns>
-    </one-to-one>
-    <many-to-many field="messageMessage" target-entity="TbmMessage" mapped-by="photosizeFile" fetch="LAZY"/>
-    <many-to-many field="userprofilephotos" target-entity="TbmUserprofilephotos" mapped-by="photosizeFile" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

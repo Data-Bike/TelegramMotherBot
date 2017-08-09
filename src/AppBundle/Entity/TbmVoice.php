@@ -123,5 +123,19 @@ class TbmVoice
     {
         return $this->file;
     }
-}
+    /**
+     * @var integer
+     */
+    private $fileId;
 
+
+    /**
+     * Get fileId
+     *
+     * @return integer
+     */
+    public function getFileId()
+    {
+        return $this->fileId;
+    }
+}

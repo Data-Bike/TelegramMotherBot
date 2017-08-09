@@ -4,13 +4,10 @@
     <unique-constraints>
       <unique-constraint name="id_UNIQUE" columns="id"/>
     </unique-constraints>
-    <id name="id" association-key="true"/>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="longitude" type="float" column="longitude" precision="10" scale="0" nullable="true"/>
     <field name="latitude" type="float" column="latitude" precision="10" scale="0" nullable="true"/>
-    <one-to-one field="id" target-entity="TbmVenue" fetch="LAZY">
-      <join-columns>
-        <join-column name="id" referenced-column-name="location"/>
-      </join-columns>
-    </one-to-one>
   </entity>
 </doctrine-mapping>

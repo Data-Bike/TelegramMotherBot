@@ -38,6 +38,5 @@
       </options>
     </field>
     <field name="pay" type="boolean" column="pay" nullable="true"/>
-    <many-to-many field="inlinekeyboardmarkup" target-entity="TbmInlinekeyboardmarkup" mapped-by="inlinekeyboardbutton" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

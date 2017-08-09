@@ -153,4 +153,3 @@ class TbmContact
         return $this->id;
     }
 }
-

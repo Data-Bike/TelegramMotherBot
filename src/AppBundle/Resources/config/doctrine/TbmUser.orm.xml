@@ -4,7 +4,9 @@
     <unique-constraints>
       <unique-constraint name="id_UNIQUE" columns="id"/>
     </unique-constraints>
-    <id name="id" association-key="true"/>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
     <field name="firstName" type="string" column="first_name" length="45" nullable="true">
       <options>
         <option name="fixed"/>
@@ -25,11 +27,5 @@
         <option name="fixed"/>
       </options>
     </field>
-    <one-to-one field="id" target-entity="TbmMessage" fetch="LAZY">
-      <join-columns>
-        <join-column name="id" referenced-column-name="from"/>
-      </join-columns>
-    </one-to-one>
-    <many-to-many field="messageMessage" target-entity="TbmMessage" mapped-by="user" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

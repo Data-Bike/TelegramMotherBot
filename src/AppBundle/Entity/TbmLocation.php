@@ -95,4 +95,3 @@ class TbmLocation
         return $this->id;
     }
 }
-

@@ -487,4 +487,3 @@ class TbmChatmember
         return $this->id;
     }
 }
-

@@ -14,6 +14,5 @@
     </field>
     <field name="requestContact" type="boolean" column="request_contact" nullable="true"/>
     <field name="requestLocation" type="boolean" column="request_location" nullable="true"/>
-    <many-to-many field="replykeyboardmarkup" target-entity="TbmReplykeyboardmarkup" mapped-by="keyboardbutton" fetch="LAZY"/>
   </entity>
 </doctrine-mapping>

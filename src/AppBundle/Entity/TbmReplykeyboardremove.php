@@ -81,4 +81,3 @@ class TbmReplykeyboardremove
         return $this->id;
     }
 }
-
