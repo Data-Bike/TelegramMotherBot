@@ -1,6 +1,5 @@
 <?php
 
-// src/AppBundle/Controller/LuckyController.php
 
 namespace AppBundle\Controller;
 
@@ -16,7 +15,7 @@ class BotController {
      */
     public function indexAction($token) {
         $number = mt_rand(0, 100);
-        return new Response($token);
+        return new Response($token." hello!");
     }
 
 }
