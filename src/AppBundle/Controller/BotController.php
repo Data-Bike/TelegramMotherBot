@@ -5,8 +5,9 @@ namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class BotController {
+class BotController extends Controller {
 
     /**
      * Matches /bot/*
@@ -14,7 +15,7 @@ class BotController {
      * @Route("/bot/{token}")
      */
     public function indexAction($token) {
-        $number = mt_rand(0, 100);
+        
         return new Response($token." hello!");
     }
 
