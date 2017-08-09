@@ -16,7 +16,7 @@ class BotController extends Controller {
      */
     public function indexAction($token) {
         $this->json(['hello'=>'world']);
-        return $this->json(['hello'=>'world']);
+        return $this->json(['hello'=>"$token"]);
     }
 
 }
