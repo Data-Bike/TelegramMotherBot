@@ -15,7 +15,10 @@ class BotController extends Controller {
      * @Route("/bot/{token}")
      */
     public function indexAction($token) {
-        $this->json(['hello'=>'world']);
+        /* @var $logger \Psr\Log\LoggerInterface */
+        $logger=$this->get('logger');
+        
+        $logger->info("Hello $token!");
         return $this->json(['hello'=>"$token"]);
     }
 
