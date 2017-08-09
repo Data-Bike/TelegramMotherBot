@@ -15,7 +15,7 @@ class BotController extends Controller {
      * @Route("/bot/{token}")
      */
     public function indexAction($token) {
-        
+        $this->json(['hello'=>'world']);
         return new Response($token." hello!");
     }
 
