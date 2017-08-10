@@ -18,7 +18,7 @@ class BotController extends Controller {
         /* @var $logger \Psr\Log\LoggerInterface */
         $logger=$this->get('logger');
         
-        $logger->info($request->get('data'));
+        $logger->info($request->getContent());
         return $this->json(['hello'=>"$token"]);
     }
 
