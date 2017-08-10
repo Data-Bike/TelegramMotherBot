@@ -14,7 +14,7 @@ class BotController extends Controller {
      * 
      * @Route("/bot/{token}")
      */
-    public function indexAction(Request $request,$token) {
+    public function indexAction($token,Request $request) {
         /* @var $logger \Psr\Log\LoggerInterface */
         $logger=$this->get('logger');
         
