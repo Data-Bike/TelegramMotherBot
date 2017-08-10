@@ -14,7 +14,7 @@ class BotController extends Controller {
      * 
      * @Route("/bot/{token}")
      */
-    public function indexAction($token, \Symfony\Component\HttpFoundation\Request $request) {
+    public function indexAction($token, \Symfony\Component\HttpFoundation\Request $request) : Response {
         /* @var $logger \Psr\Log\LoggerInterface */
         $logger=$this->get('logger');
         
