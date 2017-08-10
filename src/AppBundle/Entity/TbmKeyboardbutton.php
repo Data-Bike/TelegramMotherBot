@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmKeyboardbutton
  */
-class TbmKeyboardbutton
-{
+class TbmKeyboardbutton extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var string
      */
@@ -35,8 +39,7 @@ class TbmKeyboardbutton
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->replykeyboardmarkup = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -47,8 +50,7 @@ class TbmKeyboardbutton
      *
      * @return TbmKeyboardbutton
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
 
         return $this;
@@ -59,8 +61,7 @@ class TbmKeyboardbutton
      *
      * @return string
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -71,8 +72,7 @@ class TbmKeyboardbutton
      *
      * @return TbmKeyboardbutton
      */
-    public function setRequestContact($requestContact)
-    {
+    public function setRequestContact($requestContact) {
         $this->requestContact = $requestContact;
 
         return $this;
@@ -83,8 +83,7 @@ class TbmKeyboardbutton
      *
      * @return boolean
      */
-    public function getRequestContact()
-    {
+    public function getRequestContact() {
         return $this->requestContact;
     }
 
@@ -95,8 +94,7 @@ class TbmKeyboardbutton
      *
      * @return TbmKeyboardbutton
      */
-    public function setRequestLocation($requestLocation)
-    {
+    public function setRequestLocation($requestLocation) {
         $this->requestLocation = $requestLocation;
 
         return $this;
@@ -107,8 +105,7 @@ class TbmKeyboardbutton
      *
      * @return boolean
      */
-    public function getRequestLocation()
-    {
+    public function getRequestLocation() {
         return $this->requestLocation;
     }
 
@@ -117,8 +114,7 @@ class TbmKeyboardbutton
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -129,8 +125,7 @@ class TbmKeyboardbutton
      *
      * @return TbmKeyboardbutton
      */
-    public function addReplykeyboardmarkup(\AppBundle\Entity\TbmReplykeyboardmarkup $replykeyboardmarkup)
-    {
+    public function addReplykeyboardmarkup(\AppBundle\Entity\TbmReplykeyboardmarkup $replykeyboardmarkup) {
         $this->replykeyboardmarkup[] = $replykeyboardmarkup;
 
         return $this;
@@ -141,8 +136,7 @@ class TbmKeyboardbutton
      *
      * @param \AppBundle\Entity\TbmReplykeyboardmarkup $replykeyboardmarkup
      */
-    public function removeReplykeyboardmarkup(\AppBundle\Entity\TbmReplykeyboardmarkup $replykeyboardmarkup)
-    {
+    public function removeReplykeyboardmarkup(\AppBundle\Entity\TbmReplykeyboardmarkup $replykeyboardmarkup) {
         $this->replykeyboardmarkup->removeElement($replykeyboardmarkup);
     }
 
@@ -151,8 +145,8 @@ class TbmKeyboardbutton
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getReplykeyboardmarkup()
-    {
+    public function getReplykeyboardmarkup() {
         return $this->replykeyboardmarkup;
     }
+
 }

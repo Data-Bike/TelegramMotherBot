@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmResponseparameters
  */
-class TbmResponseparameters
-{
+class TbmResponseparameters extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmResponseparameters
      */
     private $id;
 
-
     /**
      * Set migrateToChatId
      *
@@ -30,8 +33,7 @@ class TbmResponseparameters
      *
      * @return TbmResponseparameters
      */
-    public function setMigrateToChatId($migrateToChatId)
-    {
+    public function setMigrateToChatId($migrateToChatId) {
         $this->migrateToChatId = $migrateToChatId;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmResponseparameters
      *
      * @return integer
      */
-    public function getMigrateToChatId()
-    {
+    public function getMigrateToChatId() {
         return $this->migrateToChatId;
     }
 
@@ -54,8 +55,7 @@ class TbmResponseparameters
      *
      * @return TbmResponseparameters
      */
-    public function setRetryAfter($retryAfter)
-    {
+    public function setRetryAfter($retryAfter) {
         $this->retryAfter = $retryAfter;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmResponseparameters
      *
      * @return integer
      */
-    public function getRetryAfter()
-    {
+    public function getRetryAfter() {
         return $this->retryAfter;
     }
 
@@ -76,8 +75,8 @@ class TbmResponseparameters
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

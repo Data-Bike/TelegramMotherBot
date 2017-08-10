@@ -5,8 +5,13 @@ namespace AppBundle\Entity;
 /**
  * TbmInlinekeyboardmarkup
  */
-class TbmInlinekeyboardmarkup
-{
+class TbmInlinekeyboardmarkup extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        $this->inlinekeyboardbutton = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -18,20 +23,11 @@ class TbmInlinekeyboardmarkup
     private $inlinekeyboardbutton;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->inlinekeyboardbutton = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Get id
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -42,8 +38,7 @@ class TbmInlinekeyboardmarkup
      *
      * @return TbmInlinekeyboardmarkup
      */
-    public function addInlinekeyboardbutton(\AppBundle\Entity\TbmInlinekeyboardbutton $inlinekeyboardbutton)
-    {
+    public function addInlinekeyboardbutton(\AppBundle\Entity\TbmInlinekeyboardbutton $inlinekeyboardbutton) {
         $this->inlinekeyboardbutton[] = $inlinekeyboardbutton;
 
         return $this;
@@ -54,8 +49,7 @@ class TbmInlinekeyboardmarkup
      *
      * @param \AppBundle\Entity\TbmInlinekeyboardbutton $inlinekeyboardbutton
      */
-    public function removeInlinekeyboardbutton(\AppBundle\Entity\TbmInlinekeyboardbutton $inlinekeyboardbutton)
-    {
+    public function removeInlinekeyboardbutton(\AppBundle\Entity\TbmInlinekeyboardbutton $inlinekeyboardbutton) {
         $this->inlinekeyboardbutton->removeElement($inlinekeyboardbutton);
     }
 
@@ -64,8 +58,8 @@ class TbmInlinekeyboardmarkup
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getInlinekeyboardbutton()
-    {
+    public function getInlinekeyboardbutton() {
         return $this->inlinekeyboardbutton;
     }
+
 }

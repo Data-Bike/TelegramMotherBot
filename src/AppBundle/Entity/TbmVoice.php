@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmVoice
  */
-class TbmVoice
-{
+class TbmVoice extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -27,7 +31,6 @@ class TbmVoice
      */
     private $file;
 
-
     /**
      * Set duration
      *
@@ -35,8 +38,7 @@ class TbmVoice
      *
      * @return TbmVoice
      */
-    public function setDuration($duration)
-    {
+    public function setDuration($duration) {
         $this->duration = $duration;
 
         return $this;
@@ -47,8 +49,7 @@ class TbmVoice
      *
      * @return integer
      */
-    public function getDuration()
-    {
+    public function getDuration() {
         return $this->duration;
     }
 
@@ -59,8 +60,7 @@ class TbmVoice
      *
      * @return TbmVoice
      */
-    public function setMimeType($mimeType)
-    {
+    public function setMimeType($mimeType) {
         $this->mimeType = $mimeType;
 
         return $this;
@@ -71,8 +71,7 @@ class TbmVoice
      *
      * @return string
      */
-    public function getMimeType()
-    {
+    public function getMimeType() {
         return $this->mimeType;
     }
 
@@ -83,8 +82,7 @@ class TbmVoice
      *
      * @return TbmVoice
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -95,8 +93,7 @@ class TbmVoice
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -107,8 +104,7 @@ class TbmVoice
      *
      * @return TbmVoice
      */
-    public function setFile(\AppBundle\Entity\TbmMessage $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmMessage $file) {
         $this->file = $file;
 
         return $this;
@@ -119,23 +115,22 @@ class TbmVoice
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

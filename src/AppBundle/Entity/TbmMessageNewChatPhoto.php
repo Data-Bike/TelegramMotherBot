@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmMessageNewChatPhoto
  */
-class TbmMessageNewChatPhoto
-{
+class TbmMessageNewChatPhoto extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -17,7 +21,6 @@ class TbmMessageNewChatPhoto
      */
     private $photosizeFileId;
 
-
     /**
      * Set messageMessageId
      *
@@ -25,8 +28,7 @@ class TbmMessageNewChatPhoto
      *
      * @return TbmMessageNewChatPhoto
      */
-    public function setMessageMessageId($messageMessageId)
-    {
+    public function setMessageMessageId($messageMessageId) {
         $this->messageMessageId = $messageMessageId;
 
         return $this;
@@ -37,8 +39,7 @@ class TbmMessageNewChatPhoto
      *
      * @return integer
      */
-    public function getMessageMessageId()
-    {
+    public function getMessageMessageId() {
         return $this->messageMessageId;
     }
 
@@ -49,8 +50,7 @@ class TbmMessageNewChatPhoto
      *
      * @return TbmMessageNewChatPhoto
      */
-    public function setPhotosizeFileId($photosizeFileId)
-    {
+    public function setPhotosizeFileId($photosizeFileId) {
         $this->photosizeFileId = $photosizeFileId;
 
         return $this;
@@ -61,9 +61,8 @@ class TbmMessageNewChatPhoto
      *
      * @return integer
      */
-    public function getPhotosizeFileId()
-    {
+    public function getPhotosizeFileId() {
         return $this->photosizeFileId;
     }
-}
 
+}

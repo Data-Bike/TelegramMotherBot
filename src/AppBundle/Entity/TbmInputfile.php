@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmInputfile
  */
-class TbmInputfile
-{
+class TbmInputfile extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmInputfile
      */
     private $id;
 
-
     /**
      * Set fileId
      *
@@ -30,8 +33,7 @@ class TbmInputfile
      *
      * @return TbmInputfile
      */
-    public function setFileId($fileId)
-    {
+    public function setFileId($fileId) {
         $this->fileId = $fileId;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmInputfile
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
 
@@ -54,8 +55,7 @@ class TbmInputfile
      *
      * @return TbmInputfile
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmInputfile
      *
      * @return string
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
@@ -76,8 +75,8 @@ class TbmInputfile
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

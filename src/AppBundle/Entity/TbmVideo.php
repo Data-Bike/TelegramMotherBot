@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmVideo
  */
-class TbmVideo
-{
+class TbmVideo extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -42,7 +46,6 @@ class TbmVideo
      */
     private $file;
 
-
     /**
      * Set width
      *
@@ -50,8 +53,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->width = $width;
 
         return $this;
@@ -62,8 +64,7 @@ class TbmVideo
      *
      * @return integer
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->width;
     }
 
@@ -74,8 +75,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->height = $height;
 
         return $this;
@@ -86,8 +86,7 @@ class TbmVideo
      *
      * @return integer
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->height;
     }
 
@@ -98,8 +97,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setDuration($duration)
-    {
+    public function setDuration($duration) {
         $this->duration = $duration;
 
         return $this;
@@ -110,8 +108,7 @@ class TbmVideo
      *
      * @return integer
      */
-    public function getDuration()
-    {
+    public function getDuration() {
         return $this->duration;
     }
 
@@ -122,8 +119,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setThumb($thumb)
-    {
+    public function setThumb($thumb) {
         $this->thumb = $thumb;
 
         return $this;
@@ -134,8 +130,7 @@ class TbmVideo
      *
      * @return integer
      */
-    public function getThumb()
-    {
+    public function getThumb() {
         return $this->thumb;
     }
 
@@ -146,8 +141,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setMimeType($mimeType)
-    {
+    public function setMimeType($mimeType) {
         $this->mimeType = $mimeType;
 
         return $this;
@@ -158,8 +152,7 @@ class TbmVideo
      *
      * @return string
      */
-    public function getMimeType()
-    {
+    public function getMimeType() {
         return $this->mimeType;
     }
 
@@ -170,8 +163,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -182,8 +174,7 @@ class TbmVideo
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -194,8 +185,7 @@ class TbmVideo
      *
      * @return TbmVideo
      */
-    public function setFile(\AppBundle\Entity\TbmMessage $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmMessage $file) {
         $this->file = $file;
 
         return $this;
@@ -206,23 +196,22 @@ class TbmVideo
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

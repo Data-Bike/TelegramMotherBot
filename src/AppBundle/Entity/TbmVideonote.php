@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmVideonote
  */
-class TbmVideonote
-{
+class TbmVideonote extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -32,7 +36,6 @@ class TbmVideonote
      */
     private $file;
 
-
     /**
      * Set length
      *
@@ -40,8 +43,7 @@ class TbmVideonote
      *
      * @return TbmVideonote
      */
-    public function setLength($length)
-    {
+    public function setLength($length) {
         $this->length = $length;
 
         return $this;
@@ -52,8 +54,7 @@ class TbmVideonote
      *
      * @return integer
      */
-    public function getLength()
-    {
+    public function getLength() {
         return $this->length;
     }
 
@@ -64,8 +65,7 @@ class TbmVideonote
      *
      * @return TbmVideonote
      */
-    public function setDuration($duration)
-    {
+    public function setDuration($duration) {
         $this->duration = $duration;
 
         return $this;
@@ -76,8 +76,7 @@ class TbmVideonote
      *
      * @return integer
      */
-    public function getDuration()
-    {
+    public function getDuration() {
         return $this->duration;
     }
 
@@ -88,8 +87,7 @@ class TbmVideonote
      *
      * @return TbmVideonote
      */
-    public function setThumb($thumb)
-    {
+    public function setThumb($thumb) {
         $this->thumb = $thumb;
 
         return $this;
@@ -100,8 +98,7 @@ class TbmVideonote
      *
      * @return integer
      */
-    public function getThumb()
-    {
+    public function getThumb() {
         return $this->thumb;
     }
 
@@ -112,8 +109,7 @@ class TbmVideonote
      *
      * @return TbmVideonote
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -124,8 +120,7 @@ class TbmVideonote
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -136,8 +131,7 @@ class TbmVideonote
      *
      * @return TbmVideonote
      */
-    public function setFile(\AppBundle\Entity\TbmMessage $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmMessage $file) {
         $this->file = $file;
 
         return $this;
@@ -148,23 +142,22 @@ class TbmVideonote
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmReplykeyboardremove
  */
-class TbmReplykeyboardremove
-{
+class TbmReplykeyboardremove extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var boolean
      */
@@ -22,7 +26,6 @@ class TbmReplykeyboardremove
      */
     private $id;
 
-
     /**
      * Set removeKeyboard
      *
@@ -30,8 +33,7 @@ class TbmReplykeyboardremove
      *
      * @return TbmReplykeyboardremove
      */
-    public function setRemoveKeyboard($removeKeyboard)
-    {
+    public function setRemoveKeyboard($removeKeyboard) {
         $this->removeKeyboard = $removeKeyboard;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmReplykeyboardremove
      *
      * @return boolean
      */
-    public function getRemoveKeyboard()
-    {
+    public function getRemoveKeyboard() {
         return $this->removeKeyboard;
     }
 
@@ -54,8 +55,7 @@ class TbmReplykeyboardremove
      *
      * @return TbmReplykeyboardremove
      */
-    public function setSelective($selective)
-    {
+    public function setSelective($selective) {
         $this->selective = $selective;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmReplykeyboardremove
      *
      * @return boolean
      */
-    public function getSelective()
-    {
+    public function getSelective() {
         return $this->selective;
     }
 
@@ -76,8 +75,8 @@ class TbmReplykeyboardremove
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmInlinekeyboardmarkupHasInlinekeyboardbutton
  */
-class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
-{
+class TbmInlinekeyboardmarkupHasInlinekeyboardbutton extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      */
     private $inlinekeyboardbuttonId;
 
-
     /**
      * Set row
      *
@@ -30,8 +33,7 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      */
-    public function setRow($row)
-    {
+    public function setRow($row) {
         $this->row = $row;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return integer
      */
-    public function getRow()
-    {
+    public function getRow() {
         return $this->row;
     }
 
@@ -54,8 +55,7 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      */
-    public function setInlinekeyboardmarkupId($inlinekeyboardmarkupId)
-    {
+    public function setInlinekeyboardmarkupId($inlinekeyboardmarkupId) {
         $this->inlinekeyboardmarkupId = $inlinekeyboardmarkupId;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return integer
      */
-    public function getInlinekeyboardmarkupId()
-    {
+    public function getInlinekeyboardmarkupId() {
         return $this->inlinekeyboardmarkupId;
     }
 
@@ -78,8 +77,7 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      */
-    public function setInlinekeyboardbuttonId($inlinekeyboardbuttonId)
-    {
+    public function setInlinekeyboardbuttonId($inlinekeyboardbuttonId) {
         $this->inlinekeyboardbuttonId = $inlinekeyboardbuttonId;
 
         return $this;
@@ -90,9 +88,8 @@ class TbmInlinekeyboardmarkupHasInlinekeyboardbutton
      *
      * @return integer
      */
-    public function getInlinekeyboardbuttonId()
-    {
+    public function getInlinekeyboardbuttonId() {
         return $this->inlinekeyboardbuttonId;
     }
-}
 
+}

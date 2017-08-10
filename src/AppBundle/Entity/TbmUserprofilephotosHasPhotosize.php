@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmUserprofilephotosHasPhotosize
  */
-class TbmUserprofilephotosHasPhotosize
-{
+class TbmUserprofilephotosHasPhotosize extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmUserprofilephotosHasPhotosize
      */
     private $photosizeFileId;
 
-
     /**
      * Set row
      *
@@ -30,8 +33,7 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return TbmUserprofilephotosHasPhotosize
      */
-    public function setRow($row)
-    {
+    public function setRow($row) {
         $this->row = $row;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return integer
      */
-    public function getRow()
-    {
+    public function getRow() {
         return $this->row;
     }
 
@@ -54,8 +55,7 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return TbmUserprofilephotosHasPhotosize
      */
-    public function setUserprofilephotosId($userprofilephotosId)
-    {
+    public function setUserprofilephotosId($userprofilephotosId) {
         $this->userprofilephotosId = $userprofilephotosId;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return integer
      */
-    public function getUserprofilephotosId()
-    {
+    public function getUserprofilephotosId() {
         return $this->userprofilephotosId;
     }
 
@@ -78,8 +77,7 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return TbmUserprofilephotosHasPhotosize
      */
-    public function setPhotosizeFileId($photosizeFileId)
-    {
+    public function setPhotosizeFileId($photosizeFileId) {
         $this->photosizeFileId = $photosizeFileId;
 
         return $this;
@@ -90,9 +88,8 @@ class TbmUserprofilephotosHasPhotosize
      *
      * @return integer
      */
-    public function getPhotosizeFileId()
-    {
+    public function getPhotosizeFileId() {
         return $this->photosizeFileId;
     }
-}
 
+}

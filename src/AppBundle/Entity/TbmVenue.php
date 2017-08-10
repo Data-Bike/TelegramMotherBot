@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmVenue
  */
-class TbmVenue
-{
+class TbmVenue extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -32,7 +36,6 @@ class TbmVenue
      */
     private $id;
 
-
     /**
      * Set location
      *
@@ -40,8 +43,7 @@ class TbmVenue
      *
      * @return TbmVenue
      */
-    public function setLocation($location)
-    {
+    public function setLocation($location) {
         $this->location = $location;
 
         return $this;
@@ -52,8 +54,7 @@ class TbmVenue
      *
      * @return integer
      */
-    public function getLocation()
-    {
+    public function getLocation() {
         return $this->location;
     }
 
@@ -64,8 +65,7 @@ class TbmVenue
      *
      * @return TbmVenue
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -76,8 +76,7 @@ class TbmVenue
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -88,8 +87,7 @@ class TbmVenue
      *
      * @return TbmVenue
      */
-    public function setAddress($address)
-    {
+    public function setAddress($address) {
         $this->address = $address;
 
         return $this;
@@ -100,8 +98,7 @@ class TbmVenue
      *
      * @return string
      */
-    public function getAddress()
-    {
+    public function getAddress() {
         return $this->address;
     }
 
@@ -112,8 +109,7 @@ class TbmVenue
      *
      * @return TbmVenue
      */
-    public function setFoursquareId($foursquareId)
-    {
+    public function setFoursquareId($foursquareId) {
         $this->foursquareId = $foursquareId;
 
         return $this;
@@ -124,8 +120,7 @@ class TbmVenue
      *
      * @return string
      */
-    public function getFoursquareId()
-    {
+    public function getFoursquareId() {
         return $this->foursquareId;
     }
 
@@ -134,8 +129,8 @@ class TbmVenue
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

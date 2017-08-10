@@ -5,8 +5,13 @@ namespace AppBundle\Entity;
 /**
  * TbmReplykeyboardmarkup
  */
-class TbmReplykeyboardmarkup
-{
+class TbmReplykeyboardmarkup extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        $this->keyboardbutton = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct($params);
+    }
+
     /**
      * @var boolean
      */
@@ -33,22 +38,13 @@ class TbmReplykeyboardmarkup
     private $keyboardbutton;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->keyboardbutton = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Set resizeKeyboard
      *
      * @param boolean $resizeKeyboard
      *
      * @return TbmReplykeyboardmarkup
      */
-    public function setResizeKeyboard($resizeKeyboard)
-    {
+    public function setResizeKeyboard($resizeKeyboard) {
         $this->resizeKeyboard = $resizeKeyboard;
 
         return $this;
@@ -59,8 +55,7 @@ class TbmReplykeyboardmarkup
      *
      * @return boolean
      */
-    public function getResizeKeyboard()
-    {
+    public function getResizeKeyboard() {
         return $this->resizeKeyboard;
     }
 
@@ -71,8 +66,7 @@ class TbmReplykeyboardmarkup
      *
      * @return TbmReplykeyboardmarkup
      */
-    public function setOneTimeKeyboard($oneTimeKeyboard)
-    {
+    public function setOneTimeKeyboard($oneTimeKeyboard) {
         $this->oneTimeKeyboard = $oneTimeKeyboard;
 
         return $this;
@@ -83,8 +77,7 @@ class TbmReplykeyboardmarkup
      *
      * @return boolean
      */
-    public function getOneTimeKeyboard()
-    {
+    public function getOneTimeKeyboard() {
         return $this->oneTimeKeyboard;
     }
 
@@ -95,8 +88,7 @@ class TbmReplykeyboardmarkup
      *
      * @return TbmReplykeyboardmarkup
      */
-    public function setSelective($selective)
-    {
+    public function setSelective($selective) {
         $this->selective = $selective;
 
         return $this;
@@ -107,8 +99,7 @@ class TbmReplykeyboardmarkup
      *
      * @return boolean
      */
-    public function getSelective()
-    {
+    public function getSelective() {
         return $this->selective;
     }
 
@@ -117,8 +108,7 @@ class TbmReplykeyboardmarkup
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -129,8 +119,7 @@ class TbmReplykeyboardmarkup
      *
      * @return TbmReplykeyboardmarkup
      */
-    public function addKeyboardbutton(\AppBundle\Entity\TbmKeyboardbutton $keyboardbutton)
-    {
+    public function addKeyboardbutton(\AppBundle\Entity\TbmKeyboardbutton $keyboardbutton) {
         $this->keyboardbutton[] = $keyboardbutton;
 
         return $this;
@@ -141,8 +130,7 @@ class TbmReplykeyboardmarkup
      *
      * @param \AppBundle\Entity\TbmKeyboardbutton $keyboardbutton
      */
-    public function removeKeyboardbutton(\AppBundle\Entity\TbmKeyboardbutton $keyboardbutton)
-    {
+    public function removeKeyboardbutton(\AppBundle\Entity\TbmKeyboardbutton $keyboardbutton) {
         $this->keyboardbutton->removeElement($keyboardbutton);
     }
 
@@ -151,8 +139,8 @@ class TbmReplykeyboardmarkup
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getKeyboardbutton()
-    {
+    public function getKeyboardbutton() {
         return $this->keyboardbutton;
     }
+
 }

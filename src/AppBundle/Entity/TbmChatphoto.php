@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmChatphoto
  */
-class TbmChatphoto
-{
+class TbmChatphoto extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmChatphoto
      */
     private $id;
 
-
     /**
      * Set smallFileId
      *
@@ -30,8 +33,7 @@ class TbmChatphoto
      *
      * @return TbmChatphoto
      */
-    public function setSmallFileId($smallFileId)
-    {
+    public function setSmallFileId($smallFileId) {
         $this->smallFileId = $smallFileId;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmChatphoto
      *
      * @return integer
      */
-    public function getSmallFileId()
-    {
+    public function getSmallFileId() {
         return $this->smallFileId;
     }
 
@@ -54,8 +55,7 @@ class TbmChatphoto
      *
      * @return TbmChatphoto
      */
-    public function setBigFileId($bigFileId)
-    {
+    public function setBigFileId($bigFileId) {
         $this->bigFileId = $bigFileId;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmChatphoto
      *
      * @return integer
      */
-    public function getBigFileId()
-    {
+    public function getBigFileId() {
         return $this->bigFileId;
     }
 
@@ -78,8 +77,7 @@ class TbmChatphoto
      *
      * @return TbmChatphoto
      */
-    public function setId(\AppBundle\Entity\TbmChat $id)
-    {
+    public function setId(\AppBundle\Entity\TbmChat $id) {
         $this->id = $id;
 
         return $this;
@@ -90,8 +88,8 @@ class TbmChatphoto
      *
      * @return \AppBundle\Entity\TbmChat
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

@@ -5,8 +5,13 @@ namespace AppBundle\Entity;
 /**
  * TbmUserprofilephotos
  */
-class TbmUserprofilephotos
-{
+class TbmUserprofilephotos extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        $this->photosizeFile = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -23,22 +28,13 @@ class TbmUserprofilephotos
     private $photosizeFile;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->photosizeFile = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Set totalCount
      *
      * @param integer $totalCount
      *
      * @return TbmUserprofilephotos
      */
-    public function setTotalCount($totalCount)
-    {
+    public function setTotalCount($totalCount) {
         $this->totalCount = $totalCount;
 
         return $this;
@@ -49,8 +45,7 @@ class TbmUserprofilephotos
      *
      * @return integer
      */
-    public function getTotalCount()
-    {
+    public function getTotalCount() {
         return $this->totalCount;
     }
 
@@ -59,8 +54,7 @@ class TbmUserprofilephotos
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -71,8 +65,7 @@ class TbmUserprofilephotos
      *
      * @return TbmUserprofilephotos
      */
-    public function addPhotosizeFile(\AppBundle\Entity\TbmPhotosize $photosizeFile)
-    {
+    public function addPhotosizeFile(\AppBundle\Entity\TbmPhotosize $photosizeFile) {
         $this->photosizeFile[] = $photosizeFile;
 
         return $this;
@@ -83,8 +76,7 @@ class TbmUserprofilephotos
      *
      * @param \AppBundle\Entity\TbmPhotosize $photosizeFile
      */
-    public function removePhotosizeFile(\AppBundle\Entity\TbmPhotosize $photosizeFile)
-    {
+    public function removePhotosizeFile(\AppBundle\Entity\TbmPhotosize $photosizeFile) {
         $this->photosizeFile->removeElement($photosizeFile);
     }
 
@@ -93,8 +85,8 @@ class TbmUserprofilephotos
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPhotosizeFile()
-    {
+    public function getPhotosizeFile() {
         return $this->photosizeFile;
     }
+
 }

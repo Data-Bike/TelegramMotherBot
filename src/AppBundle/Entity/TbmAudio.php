@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmAudio
  */
-class TbmAudio
-{
+class TbmAudio extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -37,7 +41,6 @@ class TbmAudio
      */
     private $file;
 
-
     /**
      * Set duration
      *
@@ -45,8 +48,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setDuration($duration)
-    {
+    public function setDuration($duration) {
         $this->duration = $duration;
 
         return $this;
@@ -57,8 +59,7 @@ class TbmAudio
      *
      * @return integer
      */
-    public function getDuration()
-    {
+    public function getDuration() {
         return $this->duration;
     }
 
@@ -69,8 +70,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setPerformer($performer)
-    {
+    public function setPerformer($performer) {
         $this->performer = $performer;
 
         return $this;
@@ -81,8 +81,7 @@ class TbmAudio
      *
      * @return string
      */
-    public function getPerformer()
-    {
+    public function getPerformer() {
         return $this->performer;
     }
 
@@ -93,8 +92,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -105,8 +103,7 @@ class TbmAudio
      *
      * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -117,8 +114,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setMimeType($mimeType)
-    {
+    public function setMimeType($mimeType) {
         $this->mimeType = $mimeType;
 
         return $this;
@@ -129,8 +125,7 @@ class TbmAudio
      *
      * @return string
      */
-    public function getMimeType()
-    {
+    public function getMimeType() {
         return $this->mimeType;
     }
 
@@ -141,8 +136,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -153,8 +147,7 @@ class TbmAudio
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -165,8 +158,7 @@ class TbmAudio
      *
      * @return TbmAudio
      */
-    public function setFile(\AppBundle\Entity\TbmMessage $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmMessage $file) {
         $this->file = $file;
 
         return $this;
@@ -177,23 +169,22 @@ class TbmAudio
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

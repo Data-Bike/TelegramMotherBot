@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmContact
  */
-class TbmContact
-{
+class TbmContact extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var string
      */
@@ -32,7 +36,6 @@ class TbmContact
      */
     private $id;
 
-
     /**
      * Set phoneNumber
      *
@@ -40,8 +43,7 @@ class TbmContact
      *
      * @return TbmContact
      */
-    public function setPhoneNumber($phoneNumber)
-    {
+    public function setPhoneNumber($phoneNumber) {
         $this->phoneNumber = $phoneNumber;
 
         return $this;
@@ -52,8 +54,7 @@ class TbmContact
      *
      * @return string
      */
-    public function getPhoneNumber()
-    {
+    public function getPhoneNumber() {
         return $this->phoneNumber;
     }
 
@@ -64,8 +65,7 @@ class TbmContact
      *
      * @return TbmContact
      */
-    public function setFirstName($firstName)
-    {
+    public function setFirstName($firstName) {
         $this->firstName = $firstName;
 
         return $this;
@@ -76,8 +76,7 @@ class TbmContact
      *
      * @return string
      */
-    public function getFirstName()
-    {
+    public function getFirstName() {
         return $this->firstName;
     }
 
@@ -88,8 +87,7 @@ class TbmContact
      *
      * @return TbmContact
      */
-    public function setLastName($lastName)
-    {
+    public function setLastName($lastName) {
         $this->lastName = $lastName;
 
         return $this;
@@ -100,8 +98,7 @@ class TbmContact
      *
      * @return string
      */
-    public function getLastName()
-    {
+    public function getLastName() {
         return $this->lastName;
     }
 
@@ -112,8 +109,7 @@ class TbmContact
      *
      * @return TbmContact
      */
-    public function setUserId($userId)
-    {
+    public function setUserId($userId) {
         $this->userId = $userId;
 
         return $this;
@@ -124,8 +120,7 @@ class TbmContact
      *
      * @return integer
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->userId;
     }
 
@@ -136,8 +131,7 @@ class TbmContact
      *
      * @return TbmContact
      */
-    public function setId(\AppBundle\Entity\TbmMessage $id)
-    {
+    public function setId(\AppBundle\Entity\TbmMessage $id) {
         $this->id = $id;
 
         return $this;
@@ -148,8 +142,8 @@ class TbmContact
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

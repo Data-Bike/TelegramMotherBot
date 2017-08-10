@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmMessageNewChatMembers
  */
-class TbmMessageNewChatMembers
-{
+class TbmMessageNewChatMembers extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -17,7 +21,6 @@ class TbmMessageNewChatMembers
      */
     private $userId;
 
-
     /**
      * Set messageMessageId
      *
@@ -25,8 +28,7 @@ class TbmMessageNewChatMembers
      *
      * @return TbmMessageNewChatMembers
      */
-    public function setMessageMessageId($messageMessageId)
-    {
+    public function setMessageMessageId($messageMessageId) {
         $this->messageMessageId = $messageMessageId;
 
         return $this;
@@ -37,8 +39,7 @@ class TbmMessageNewChatMembers
      *
      * @return integer
      */
-    public function getMessageMessageId()
-    {
+    public function getMessageMessageId() {
         return $this->messageMessageId;
     }
 
@@ -49,8 +50,7 @@ class TbmMessageNewChatMembers
      *
      * @return TbmMessageNewChatMembers
      */
-    public function setUserId($userId)
-    {
+    public function setUserId($userId) {
         $this->userId = $userId;
 
         return $this;
@@ -61,9 +61,8 @@ class TbmMessageNewChatMembers
      *
      * @return integer
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->userId;
     }
-}
 
+}

@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmDocument
  */
-class TbmDocument
-{
+class TbmDocument extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -32,7 +36,6 @@ class TbmDocument
      */
     private $file;
 
-
     /**
      * Set thumb
      *
@@ -40,8 +43,7 @@ class TbmDocument
      *
      * @return TbmDocument
      */
-    public function setThumb($thumb)
-    {
+    public function setThumb($thumb) {
         $this->thumb = $thumb;
 
         return $this;
@@ -52,8 +54,7 @@ class TbmDocument
      *
      * @return integer
      */
-    public function getThumb()
-    {
+    public function getThumb() {
         return $this->thumb;
     }
 
@@ -64,8 +65,7 @@ class TbmDocument
      *
      * @return TbmDocument
      */
-    public function setFileName($fileName)
-    {
+    public function setFileName($fileName) {
         $this->fileName = $fileName;
 
         return $this;
@@ -76,8 +76,7 @@ class TbmDocument
      *
      * @return string
      */
-    public function getFileName()
-    {
+    public function getFileName() {
         return $this->fileName;
     }
 
@@ -88,8 +87,7 @@ class TbmDocument
      *
      * @return TbmDocument
      */
-    public function setMimeType($mimeType)
-    {
+    public function setMimeType($mimeType) {
         $this->mimeType = $mimeType;
 
         return $this;
@@ -100,8 +98,7 @@ class TbmDocument
      *
      * @return string
      */
-    public function getMimeType()
-    {
+    public function getMimeType() {
         return $this->mimeType;
     }
 
@@ -112,8 +109,7 @@ class TbmDocument
      *
      * @return TbmDocument
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -124,8 +120,7 @@ class TbmDocument
      *
      * @return string
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -136,8 +131,7 @@ class TbmDocument
      *
      * @return TbmDocument
      */
-    public function setFile(\AppBundle\Entity\TbmMessage $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmMessage $file) {
         $this->file = $file;
 
         return $this;
@@ -148,23 +142,22 @@ class TbmDocument
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

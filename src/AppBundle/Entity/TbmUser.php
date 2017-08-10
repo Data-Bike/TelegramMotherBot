@@ -5,8 +5,13 @@ namespace AppBundle\Entity;
 /**
  * TbmUser
  */
-class TbmUser
-{
+class TbmUser extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        $this->messageMessage = new \Doctrine\Common\Collections\ArrayCollection();
+        parent::__construct($params);
+    }
+
     /**
      * @var string
      */
@@ -38,22 +43,13 @@ class TbmUser
     private $messageMessage;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->messageMessage = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
      * Set firstName
      *
      * @param string $firstName
      *
      * @return TbmUser
      */
-    public function setFirstName($firstName)
-    {
+    public function setFirstName($firstName) {
         $this->firstName = $firstName;
 
         return $this;
@@ -64,8 +60,7 @@ class TbmUser
      *
      * @return string
      */
-    public function getFirstName()
-    {
+    public function getFirstName() {
         return $this->firstName;
     }
 
@@ -76,8 +71,7 @@ class TbmUser
      *
      * @return TbmUser
      */
-    public function setLastName($lastName)
-    {
+    public function setLastName($lastName) {
         $this->lastName = $lastName;
 
         return $this;
@@ -88,8 +82,7 @@ class TbmUser
      *
      * @return string
      */
-    public function getLastName()
-    {
+    public function getLastName() {
         return $this->lastName;
     }
 
@@ -100,8 +93,7 @@ class TbmUser
      *
      * @return TbmUser
      */
-    public function setLanguageCode($languageCode)
-    {
+    public function setLanguageCode($languageCode) {
         $this->languageCode = $languageCode;
 
         return $this;
@@ -112,8 +104,7 @@ class TbmUser
      *
      * @return string
      */
-    public function getLanguageCode()
-    {
+    public function getLanguageCode() {
         return $this->languageCode;
     }
 
@@ -124,8 +115,7 @@ class TbmUser
      *
      * @return TbmUser
      */
-    public function setUsername($username)
-    {
+    public function setUsername($username) {
         $this->username = $username;
 
         return $this;
@@ -136,8 +126,7 @@ class TbmUser
      *
      * @return string
      */
-    public function getUsername()
-    {
+    public function getUsername() {
         return $this->username;
     }
 
@@ -148,8 +137,7 @@ class TbmUser
      *
      * @return TbmUser
      */
-    public function setId(\AppBundle\Entity\TbmMessage $id)
-    {
+    public function setId(\AppBundle\Entity\TbmMessage $id) {
         $this->id = $id;
 
         return $this;
@@ -160,8 +148,7 @@ class TbmUser
      *
      * @return \AppBundle\Entity\TbmMessage
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -172,8 +159,7 @@ class TbmUser
      *
      * @return TbmUser
      */
-    public function addMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage)
-    {
+    public function addMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage) {
         $this->messageMessage[] = $messageMessage;
 
         return $this;
@@ -184,8 +170,7 @@ class TbmUser
      *
      * @param \AppBundle\Entity\TbmMessage $messageMessage
      */
-    public function removeMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage)
-    {
+    public function removeMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage) {
         $this->messageMessage->removeElement($messageMessage);
     }
 
@@ -194,8 +179,8 @@ class TbmUser
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMessageMessage()
-    {
+    public function getMessageMessage() {
         return $this->messageMessage;
     }
+
 }

@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmChatmember
  */
-class TbmChatmember
-{
+class TbmChatmember extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -92,7 +96,6 @@ class TbmChatmember
      */
     private $id;
 
-
     /**
      * Set user
      *
@@ -100,8 +103,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setUser($user)
-    {
+    public function setUser($user) {
         $this->user = $user;
 
         return $this;
@@ -112,8 +114,7 @@ class TbmChatmember
      *
      * @return integer
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
 
@@ -124,8 +125,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setStatus($status)
-    {
+    public function setStatus($status) {
         $this->status = $status;
 
         return $this;
@@ -136,8 +136,7 @@ class TbmChatmember
      *
      * @return string
      */
-    public function getStatus()
-    {
+    public function getStatus() {
         return $this->status;
     }
 
@@ -148,8 +147,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setUntilDate($untilDate)
-    {
+    public function setUntilDate($untilDate) {
         $this->untilDate = $untilDate;
 
         return $this;
@@ -160,8 +158,7 @@ class TbmChatmember
      *
      * @return \DateTime
      */
-    public function getUntilDate()
-    {
+    public function getUntilDate() {
         return $this->untilDate;
     }
 
@@ -172,8 +169,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanBeEdited($canBeEdited)
-    {
+    public function setCanBeEdited($canBeEdited) {
         $this->canBeEdited = $canBeEdited;
 
         return $this;
@@ -184,8 +180,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanBeEdited()
-    {
+    public function getCanBeEdited() {
         return $this->canBeEdited;
     }
 
@@ -196,8 +191,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanChangeInfo($canChangeInfo)
-    {
+    public function setCanChangeInfo($canChangeInfo) {
         $this->canChangeInfo = $canChangeInfo;
 
         return $this;
@@ -208,8 +202,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanChangeInfo()
-    {
+    public function getCanChangeInfo() {
         return $this->canChangeInfo;
     }
 
@@ -220,8 +213,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanPostMessages($canPostMessages)
-    {
+    public function setCanPostMessages($canPostMessages) {
         $this->canPostMessages = $canPostMessages;
 
         return $this;
@@ -232,8 +224,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanPostMessages()
-    {
+    public function getCanPostMessages() {
         return $this->canPostMessages;
     }
 
@@ -244,8 +235,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanEditMessages($canEditMessages)
-    {
+    public function setCanEditMessages($canEditMessages) {
         $this->canEditMessages = $canEditMessages;
 
         return $this;
@@ -256,8 +246,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanEditMessages()
-    {
+    public function getCanEditMessages() {
         return $this->canEditMessages;
     }
 
@@ -268,8 +257,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanDeleteMessages($canDeleteMessages)
-    {
+    public function setCanDeleteMessages($canDeleteMessages) {
         $this->canDeleteMessages = $canDeleteMessages;
 
         return $this;
@@ -280,8 +268,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanDeleteMessages()
-    {
+    public function getCanDeleteMessages() {
         return $this->canDeleteMessages;
     }
 
@@ -292,8 +279,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanInviteUsers($canInviteUsers)
-    {
+    public function setCanInviteUsers($canInviteUsers) {
         $this->canInviteUsers = $canInviteUsers;
 
         return $this;
@@ -304,8 +290,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanInviteUsers()
-    {
+    public function getCanInviteUsers() {
         return $this->canInviteUsers;
     }
 
@@ -316,8 +301,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanRestrictMembers($canRestrictMembers)
-    {
+    public function setCanRestrictMembers($canRestrictMembers) {
         $this->canRestrictMembers = $canRestrictMembers;
 
         return $this;
@@ -328,8 +312,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanRestrictMembers()
-    {
+    public function getCanRestrictMembers() {
         return $this->canRestrictMembers;
     }
 
@@ -340,8 +323,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanPinMessages($canPinMessages)
-    {
+    public function setCanPinMessages($canPinMessages) {
         $this->canPinMessages = $canPinMessages;
 
         return $this;
@@ -352,8 +334,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanPinMessages()
-    {
+    public function getCanPinMessages() {
         return $this->canPinMessages;
     }
 
@@ -364,8 +345,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanPromoteMembers($canPromoteMembers)
-    {
+    public function setCanPromoteMembers($canPromoteMembers) {
         $this->canPromoteMembers = $canPromoteMembers;
 
         return $this;
@@ -376,8 +356,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanPromoteMembers()
-    {
+    public function getCanPromoteMembers() {
         return $this->canPromoteMembers;
     }
 
@@ -388,8 +367,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanSendMessages($canSendMessages)
-    {
+    public function setCanSendMessages($canSendMessages) {
         $this->canSendMessages = $canSendMessages;
 
         return $this;
@@ -400,8 +378,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanSendMessages()
-    {
+    public function getCanSendMessages() {
         return $this->canSendMessages;
     }
 
@@ -412,8 +389,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanSendMediaMessages($canSendMediaMessages)
-    {
+    public function setCanSendMediaMessages($canSendMediaMessages) {
         $this->canSendMediaMessages = $canSendMediaMessages;
 
         return $this;
@@ -424,8 +400,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanSendMediaMessages()
-    {
+    public function getCanSendMediaMessages() {
         return $this->canSendMediaMessages;
     }
 
@@ -436,8 +411,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanSendOtherMessages($canSendOtherMessages)
-    {
+    public function setCanSendOtherMessages($canSendOtherMessages) {
         $this->canSendOtherMessages = $canSendOtherMessages;
 
         return $this;
@@ -448,8 +422,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanSendOtherMessages()
-    {
+    public function getCanSendOtherMessages() {
         return $this->canSendOtherMessages;
     }
 
@@ -460,8 +433,7 @@ class TbmChatmember
      *
      * @return TbmChatmember
      */
-    public function setCanAddWebPagePreviews($canAddWebPagePreviews)
-    {
+    public function setCanAddWebPagePreviews($canAddWebPagePreviews) {
         $this->canAddWebPagePreviews = $canAddWebPagePreviews;
 
         return $this;
@@ -472,8 +444,7 @@ class TbmChatmember
      *
      * @return boolean
      */
-    public function getCanAddWebPagePreviews()
-    {
+    public function getCanAddWebPagePreviews() {
         return $this->canAddWebPagePreviews;
     }
 
@@ -482,8 +453,8 @@ class TbmChatmember
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmPhotosize
  */
-class TbmPhotosize
-{
+class TbmPhotosize extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -40,8 +44,7 @@ class TbmPhotosize
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->messageMessage = new \Doctrine\Common\Collections\ArrayCollection();
         $this->userprofilephotos = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -53,8 +56,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function setWidth($width)
-    {
+    public function setWidth($width) {
         $this->width = $width;
 
         return $this;
@@ -65,8 +67,7 @@ class TbmPhotosize
      *
      * @return integer
      */
-    public function getWidth()
-    {
+    public function getWidth() {
         return $this->width;
     }
 
@@ -77,8 +78,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function setHeight($height)
-    {
+    public function setHeight($height) {
         $this->height = $height;
 
         return $this;
@@ -89,8 +89,7 @@ class TbmPhotosize
      *
      * @return integer
      */
-    public function getHeight()
-    {
+    public function getHeight() {
         return $this->height;
     }
 
@@ -101,8 +100,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -113,8 +111,7 @@ class TbmPhotosize
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -125,8 +122,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function setFile(\AppBundle\Entity\TbmVideonote $file)
-    {
+    public function setFile(\AppBundle\Entity\TbmVideonote $file) {
         $this->file = $file;
 
         return $this;
@@ -137,8 +133,7 @@ class TbmPhotosize
      *
      * @return \AppBundle\Entity\TbmVideonote
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
 
@@ -149,8 +144,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function addMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage)
-    {
+    public function addMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage) {
         $this->messageMessage[] = $messageMessage;
 
         return $this;
@@ -161,8 +155,7 @@ class TbmPhotosize
      *
      * @param \AppBundle\Entity\TbmMessage $messageMessage
      */
-    public function removeMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage)
-    {
+    public function removeMessageMessage(\AppBundle\Entity\TbmMessage $messageMessage) {
         $this->messageMessage->removeElement($messageMessage);
     }
 
@@ -171,8 +164,7 @@ class TbmPhotosize
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getMessageMessage()
-    {
+    public function getMessageMessage() {
         return $this->messageMessage;
     }
 
@@ -183,8 +175,7 @@ class TbmPhotosize
      *
      * @return TbmPhotosize
      */
-    public function addUserprofilephoto(\AppBundle\Entity\TbmUserprofilephotos $userprofilephoto)
-    {
+    public function addUserprofilephoto(\AppBundle\Entity\TbmUserprofilephotos $userprofilephoto) {
         $this->userprofilephotos[] = $userprofilephoto;
 
         return $this;
@@ -195,8 +186,7 @@ class TbmPhotosize
      *
      * @param \AppBundle\Entity\TbmUserprofilephotos $userprofilephoto
      */
-    public function removeUserprofilephoto(\AppBundle\Entity\TbmUserprofilephotos $userprofilephoto)
-    {
+    public function removeUserprofilephoto(\AppBundle\Entity\TbmUserprofilephotos $userprofilephoto) {
         $this->userprofilephotos->removeElement($userprofilephoto);
     }
 
@@ -205,23 +195,22 @@ class TbmPhotosize
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getUserprofilephotos()
-    {
+    public function getUserprofilephotos() {
         return $this->userprofilephotos;
     }
+
     /**
      * @var integer
      */
     private $fileId;
-
 
     /**
      * Get fileId
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

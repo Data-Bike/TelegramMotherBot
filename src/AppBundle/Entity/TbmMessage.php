@@ -5,7 +5,11 @@ namespace AppBundle\Entity;
 /**
  * TbmChat
  */
-class TbmMessage {
+class TbmMessage extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
 
     /**
      * @var int
@@ -176,6 +180,7 @@ class TbmMessage {
      * @var int
      */
     private $successful_payment;
+
     function getId() {
         return $this->id;
     }
@@ -447,6 +452,5 @@ class TbmMessage {
     function setSuccessful_payment($successful_payment) {
         $this->successful_payment = $successful_payment;
     }
-
 
 }

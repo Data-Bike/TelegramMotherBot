@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmFile
  */
-class TbmFile
-{
+class TbmFile extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmFile
      */
     private $fileId;
 
-
     /**
      * Set fileSize
      *
@@ -30,8 +33,7 @@ class TbmFile
      *
      * @return TbmFile
      */
-    public function setFileSize($fileSize)
-    {
+    public function setFileSize($fileSize) {
         $this->fileSize = $fileSize;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmFile
      *
      * @return integer
      */
-    public function getFileSize()
-    {
+    public function getFileSize() {
         return $this->fileSize;
     }
 
@@ -54,8 +55,7 @@ class TbmFile
      *
      * @return TbmFile
      */
-    public function setFilePath($filePath)
-    {
+    public function setFilePath($filePath) {
         $this->filePath = $filePath;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmFile
      *
      * @return string
      */
-    public function getFilePath()
-    {
+    public function getFilePath() {
         return $this->filePath;
     }
 
@@ -76,8 +75,8 @@ class TbmFile
      *
      * @return integer
      */
-    public function getFileId()
-    {
+    public function getFileId() {
         return $this->fileId;
     }
+
 }

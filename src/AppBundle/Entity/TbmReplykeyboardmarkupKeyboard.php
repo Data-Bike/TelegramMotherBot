@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmReplykeyboardmarkupKeyboard
  */
-class TbmReplykeyboardmarkupKeyboard
-{
+class TbmReplykeyboardmarkupKeyboard extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmReplykeyboardmarkupKeyboard
      */
     private $keyboardbuttonId;
 
-
     /**
      * Set row
      *
@@ -30,8 +33,7 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return TbmReplykeyboardmarkupKeyboard
      */
-    public function setRow($row)
-    {
+    public function setRow($row) {
         $this->row = $row;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return integer
      */
-    public function getRow()
-    {
+    public function getRow() {
         return $this->row;
     }
 
@@ -54,8 +55,7 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return TbmReplykeyboardmarkupKeyboard
      */
-    public function setReplykeyboardmarkupId($replykeyboardmarkupId)
-    {
+    public function setReplykeyboardmarkupId($replykeyboardmarkupId) {
         $this->replykeyboardmarkupId = $replykeyboardmarkupId;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return integer
      */
-    public function getReplykeyboardmarkupId()
-    {
+    public function getReplykeyboardmarkupId() {
         return $this->replykeyboardmarkupId;
     }
 
@@ -78,8 +77,7 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return TbmReplykeyboardmarkupKeyboard
      */
-    public function setKeyboardbuttonId($keyboardbuttonId)
-    {
+    public function setKeyboardbuttonId($keyboardbuttonId) {
         $this->keyboardbuttonId = $keyboardbuttonId;
 
         return $this;
@@ -90,9 +88,8 @@ class TbmReplykeyboardmarkupKeyboard
      *
      * @return integer
      */
-    public function getKeyboardbuttonId()
-    {
+    public function getKeyboardbuttonId() {
         return $this->keyboardbuttonId;
     }
-}
 
+}

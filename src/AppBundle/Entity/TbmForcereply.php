@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmForcereply
  */
-class TbmForcereply
-{
+class TbmForcereply extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var boolean
      */
@@ -22,7 +26,6 @@ class TbmForcereply
      */
     private $id;
 
-
     /**
      * Set forceReply
      *
@@ -30,8 +33,7 @@ class TbmForcereply
      *
      * @return TbmForcereply
      */
-    public function setForceReply($forceReply)
-    {
+    public function setForceReply($forceReply) {
         $this->forceReply = $forceReply;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmForcereply
      *
      * @return boolean
      */
-    public function getForceReply()
-    {
+    public function getForceReply() {
         return $this->forceReply;
     }
 
@@ -54,8 +55,7 @@ class TbmForcereply
      *
      * @return TbmForcereply
      */
-    public function setSelective($selective)
-    {
+    public function setSelective($selective) {
         $this->selective = $selective;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmForcereply
      *
      * @return boolean
      */
-    public function getSelective()
-    {
+    public function getSelective() {
         return $this->selective;
     }
 
@@ -76,8 +75,8 @@ class TbmForcereply
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

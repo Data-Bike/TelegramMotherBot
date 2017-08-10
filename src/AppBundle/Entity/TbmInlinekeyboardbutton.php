@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmInlinekeyboardbutton
  */
-class TbmInlinekeyboardbutton
-{
+class TbmInlinekeyboardbutton extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var string
      */
@@ -55,8 +59,7 @@ class TbmInlinekeyboardbutton
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->inlinekeyboardmarkup = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -67,8 +70,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setText($text)
-    {
+    public function setText($text) {
         $this->text = $text;
 
         return $this;
@@ -79,8 +81,7 @@ class TbmInlinekeyboardbutton
      *
      * @return string
      */
-    public function getText()
-    {
+    public function getText() {
         return $this->text;
     }
 
@@ -91,8 +92,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setUrl($url)
-    {
+    public function setUrl($url) {
         $this->url = $url;
 
         return $this;
@@ -103,8 +103,7 @@ class TbmInlinekeyboardbutton
      *
      * @return string
      */
-    public function getUrl()
-    {
+    public function getUrl() {
         return $this->url;
     }
 
@@ -115,8 +114,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setCallbackData($callbackData)
-    {
+    public function setCallbackData($callbackData) {
         $this->callbackData = $callbackData;
 
         return $this;
@@ -127,8 +125,7 @@ class TbmInlinekeyboardbutton
      *
      * @return string
      */
-    public function getCallbackData()
-    {
+    public function getCallbackData() {
         return $this->callbackData;
     }
 
@@ -139,8 +136,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setSwitchInlineQuery($switchInlineQuery)
-    {
+    public function setSwitchInlineQuery($switchInlineQuery) {
         $this->switchInlineQuery = $switchInlineQuery;
 
         return $this;
@@ -151,8 +147,7 @@ class TbmInlinekeyboardbutton
      *
      * @return string
      */
-    public function getSwitchInlineQuery()
-    {
+    public function getSwitchInlineQuery() {
         return $this->switchInlineQuery;
     }
 
@@ -163,8 +158,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setSwitchInlineQueryCurrentChat($switchInlineQueryCurrentChat)
-    {
+    public function setSwitchInlineQueryCurrentChat($switchInlineQueryCurrentChat) {
         $this->switchInlineQueryCurrentChat = $switchInlineQueryCurrentChat;
 
         return $this;
@@ -175,8 +169,7 @@ class TbmInlinekeyboardbutton
      *
      * @return string
      */
-    public function getSwitchInlineQueryCurrentChat()
-    {
+    public function getSwitchInlineQueryCurrentChat() {
         return $this->switchInlineQueryCurrentChat;
     }
 
@@ -187,8 +180,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setCallbackGame($callbackGame)
-    {
+    public function setCallbackGame($callbackGame) {
         $this->callbackGame = $callbackGame;
 
         return $this;
@@ -199,8 +191,7 @@ class TbmInlinekeyboardbutton
      *
      * @return integer
      */
-    public function getCallbackGame()
-    {
+    public function getCallbackGame() {
         return $this->callbackGame;
     }
 
@@ -211,8 +202,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function setPay($pay)
-    {
+    public function setPay($pay) {
         $this->pay = $pay;
 
         return $this;
@@ -223,8 +213,7 @@ class TbmInlinekeyboardbutton
      *
      * @return boolean
      */
-    public function getPay()
-    {
+    public function getPay() {
         return $this->pay;
     }
 
@@ -233,8 +222,7 @@ class TbmInlinekeyboardbutton
      *
      * @return integer
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -245,8 +233,7 @@ class TbmInlinekeyboardbutton
      *
      * @return TbmInlinekeyboardbutton
      */
-    public function addInlinekeyboardmarkup(\AppBundle\Entity\TbmInlinekeyboardmarkup $inlinekeyboardmarkup)
-    {
+    public function addInlinekeyboardmarkup(\AppBundle\Entity\TbmInlinekeyboardmarkup $inlinekeyboardmarkup) {
         $this->inlinekeyboardmarkup[] = $inlinekeyboardmarkup;
 
         return $this;
@@ -257,8 +244,7 @@ class TbmInlinekeyboardbutton
      *
      * @param \AppBundle\Entity\TbmInlinekeyboardmarkup $inlinekeyboardmarkup
      */
-    public function removeInlinekeyboardmarkup(\AppBundle\Entity\TbmInlinekeyboardmarkup $inlinekeyboardmarkup)
-    {
+    public function removeInlinekeyboardmarkup(\AppBundle\Entity\TbmInlinekeyboardmarkup $inlinekeyboardmarkup) {
         $this->inlinekeyboardmarkup->removeElement($inlinekeyboardmarkup);
     }
 
@@ -267,8 +253,8 @@ class TbmInlinekeyboardbutton
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getInlinekeyboardmarkup()
-    {
+    public function getInlinekeyboardmarkup() {
         return $this->inlinekeyboardmarkup;
     }
+
 }

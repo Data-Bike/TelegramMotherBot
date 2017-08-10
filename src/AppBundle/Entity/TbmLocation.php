@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmLocation
  */
-class TbmLocation
-{
+class TbmLocation extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var float
      */
@@ -22,7 +26,6 @@ class TbmLocation
      */
     private $id;
 
-
     /**
      * Set longitude
      *
@@ -30,8 +33,7 @@ class TbmLocation
      *
      * @return TbmLocation
      */
-    public function setLongitude($longitude)
-    {
+    public function setLongitude($longitude) {
         $this->longitude = $longitude;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmLocation
      *
      * @return float
      */
-    public function getLongitude()
-    {
+    public function getLongitude() {
         return $this->longitude;
     }
 
@@ -54,8 +55,7 @@ class TbmLocation
      *
      * @return TbmLocation
      */
-    public function setLatitude($latitude)
-    {
+    public function setLatitude($latitude) {
         $this->latitude = $latitude;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmLocation
      *
      * @return float
      */
-    public function getLatitude()
-    {
+    public function getLatitude() {
         return $this->latitude;
     }
 
@@ -78,8 +77,7 @@ class TbmLocation
      *
      * @return TbmLocation
      */
-    public function setId(\AppBundle\Entity\TbmVenue $id)
-    {
+    public function setId(\AppBundle\Entity\TbmVenue $id) {
         $this->id = $id;
 
         return $this;
@@ -90,8 +88,8 @@ class TbmLocation
      *
      * @return \AppBundle\Entity\TbmVenue
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
+
 }

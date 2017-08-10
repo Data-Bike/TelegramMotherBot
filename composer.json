@@ -1,5 +1,5 @@
 {
-    "name": "TelegramBotManager",
+    "name": "terra/telegram-bot-manager",
     "license": "MIT",
     "type": "project",
     "description": "Telegram Bot Manager",

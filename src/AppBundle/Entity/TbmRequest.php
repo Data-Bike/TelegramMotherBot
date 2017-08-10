@@ -5,8 +5,12 @@ namespace AppBundle\Entity;
 /**
  * TbmRequest
  */
-class TbmRequest
-{
+class TbmRequest extends TbmEntity {
+
+    public function __construct(\ArrayAccess $params) {
+        parent::__construct($params);
+    }
+
     /**
      * @var integer
      */
@@ -22,7 +26,6 @@ class TbmRequest
      */
     private $updateId;
 
-
     /**
      * Set message
      *
@@ -30,8 +33,7 @@ class TbmRequest
      *
      * @return TbmRequest
      */
-    public function setMessage($message)
-    {
+    public function setMessage($message) {
         $this->message = $message;
 
         return $this;
@@ -42,8 +44,7 @@ class TbmRequest
      *
      * @return integer
      */
-    public function getMessage()
-    {
+    public function getMessage() {
         return $this->message;
     }
 
@@ -54,8 +55,7 @@ class TbmRequest
      *
      * @return TbmRequest
      */
-    public function setEditedMessage($editedMessage)
-    {
+    public function setEditedMessage($editedMessage) {
         $this->editedMessage = $editedMessage;
 
         return $this;
@@ -66,8 +66,7 @@ class TbmRequest
      *
      * @return integer
      */
-    public function getEditedMessage()
-    {
+    public function getEditedMessage() {
         return $this->editedMessage;
     }
 
@@ -76,8 +75,8 @@ class TbmRequest
      *
      * @return integer
      */
-    public function getUpdateId()
-    {
+    public function getUpdateId() {
         return $this->updateId;
     }
+
 }
