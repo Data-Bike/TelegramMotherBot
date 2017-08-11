@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\TbmChatmember" table="tbm_chatmember">
-    <indexes>
-      <index name="user" columns="user"/>
-    </indexes>
-    <unique-constraints>
-      <unique-constraint name="id_UNIQUE" columns="id"/>
-    </unique-constraints>
-    <id name="id" type="integer" column="id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="user" type="integer" column="user" nullable="true">
-      <options>
-        <option name="unsigned">1</option>
-      </options>
-    </field>
-    <field name="status" type="string" column="status" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="untilDate" type="datetime" column="until_date" nullable="true"/>
-    <field name="canBeEdited" type="boolean" column="can_be_edited" nullable="true"/>
-    <field name="canChangeInfo" type="boolean" column="can_change_info" nullable="true"/>
-    <field name="canPostMessages" type="boolean" column="can_post_messages" nullable="true"/>
-    <field name="canEditMessages" type="boolean" column="can_edit_messages" nullable="true"/>
-    <field name="canDeleteMessages" type="boolean" column="can_delete_messages" nullable="true"/>
-    <field name="canInviteUsers" type="boolean" column="can_invite_users" nullable="true"/>
-    <field name="canRestrictMembers" type="boolean" column="can_restrict_members" nullable="true"/>
-    <field name="canPinMessages" type="boolean" column="can_pin_messages" nullable="true"/>
-    <field name="canPromoteMembers" type="boolean" column="can_promote_members" nullable="true"/>
-    <field name="canSendMessages" type="boolean" column="can_send_messages" nullable="true"/>
-    <field name="canSendMediaMessages" type="boolean" column="can_send_media_messages" nullable="true"/>
-    <field name="canSendOtherMessages" type="boolean" column="can_send_other_messages" nullable="true"/>
-    <field name="canAddWebPagePreviews" type="boolean" column="can_add_web_page_previews" nullable="true"/>
-  </entity>
+    <entity name="AppBundle\Entity\TbmChatmember" table="tbm_chatmember">
+        <indexes>
+            <index name="user" columns="user"/>
+        </indexes>
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="user" type="integer" column="user" nullable="true">
+            <options>
+                <option name="unsigned">1</option>
+            </options>
+        </field>
+        <field name="status" type="string" column="status" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="untilDate" type="datetime" column="until_date" nullable="true"/>
+        <field name="canBeEdited" type="boolean" column="can_be_edited" nullable="true"/>
+        <field name="canChangeInfo" type="boolean" column="can_change_info" nullable="true"/>
+        <field name="canPostMessages" type="boolean" column="can_post_messages" nullable="true"/>
+        <field name="canEditMessages" type="boolean" column="can_edit_messages" nullable="true"/>
+        <field name="canDeleteMessages" type="boolean" column="can_delete_messages" nullable="true"/>
+        <field name="canInviteUsers" type="boolean" column="can_invite_users" nullable="true"/>
+        <field name="canRestrictMembers" type="boolean" column="can_restrict_members" nullable="true"/>
+        <field name="canPinMessages" type="boolean" column="can_pin_messages" nullable="true"/>
+        <field name="canPromoteMembers" type="boolean" column="can_promote_members" nullable="true"/>
+        <field name="canSendMessages" type="boolean" column="can_send_messages" nullable="true"/>
+        <field name="canSendMediaMessages" type="boolean" column="can_send_media_messages" nullable="true"/>
+        <field name="canSendOtherMessages" type="boolean" column="can_send_other_messages" nullable="true"/>
+        <field name="canAddWebPagePreviews" type="boolean" column="can_add_web_page_previews" nullable="true"/>
+    </entity>
 </doctrine-mapping>

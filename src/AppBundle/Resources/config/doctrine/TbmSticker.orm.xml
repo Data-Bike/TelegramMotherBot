@@ -4,9 +4,15 @@
         <indexes>
             <index name="thumb" columns="thumb"/>
         </indexes>
-        <id name="fileId" type="integer" column="file_id">
+        <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
+    
+        <field name="file_id" type="string" column="file_id" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
         <field name="width" type="integer" column="width" nullable="true">
             <options>
                 <option name="unsigned"/>
@@ -17,26 +23,26 @@
                 <option name="unsigned"/>
             </options>
         </field>
-        <field name="duration" type="integer" column="duration" nullable="true">
-            <options>
-                <option name="unsigned"/>
-            </options>
-        </field>
         <field name="thumb" type="integer" column="thumb" nullable="true">
             <options>
                 <option name="unsigned">1</option>
             </options>
         </field>
-        <field name="mimeType" type="string" column="mime_type" length="45" nullable="true">
+        <field name="emoji" type="string" column="emoji" length="45" nullable="true">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="fileSize" type="integer" column="file_size" nullable="true">
+        <field name="set_name" type="string" column="set_name" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="file_size" type="integer" column="file_size" nullable="true">
             <options>
                 <option name="unsigned"/>
             </options>
         </field>
-        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="video" />
+        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="sticker" />
     </entity>
 </doctrine-mapping>

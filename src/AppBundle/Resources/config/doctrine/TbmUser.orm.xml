@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\TbmUser" table="tbm_user">
-    <unique-constraints>
-      <unique-constraint name="id_UNIQUE" columns="id"/>
-    </unique-constraints>
-    <id name="id" type="integer" column="id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="firstName" type="string" column="first_name" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="lastName" type="string" column="last_name" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="languageCode" type="string" column="language_code" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="username" type="string" column="username" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-  </entity>
+    <entity name="AppBundle\Entity\TbmUser" table="tbm_user">
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="firstName" type="string" column="first_name" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="lastName" type="string" column="last_name" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="languageCode" type="string" column="language_code" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="username" type="string" column="username" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+    
+        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="from" />
+        <one-to-many field="forward_from_me_messages" target-entity="TbmMessage" mapped-by="forward_from" />
+        <one-to-many field="new_chat_member_messages" target-entity="TbmMessage" mapped-by="new_chat_member" />
+        <one-to-many field="left_chat_member" target-entity="TbmMessage" mapped-by="left_chat_member_messages" />
+    </entity>
 </doctrine-mapping>

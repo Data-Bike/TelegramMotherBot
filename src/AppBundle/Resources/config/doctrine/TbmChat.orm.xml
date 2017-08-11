@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-  <entity name="AppBundle\Entity\TbmChat" table="tbm_chat">
-    <indexes>
-      <index name="photo" columns="photo"/>
-    </indexes>
-    <unique-constraints>
-      <unique-constraint name="id_UNIQUE" columns="chat_id"/>
-    </unique-constraints>
-    <id name="chatId" type="integer" column="chat_id">
-      <generator strategy="IDENTITY"/>
-    </id>
-    <field name="type" type="string" column="type" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="title" type="string" column="title" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="username" type="string" column="username" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="allMembersAreAdministrators" type="boolean" column="all_members_are_administrators" nullable="true"/>
-    <field name="photo" type="integer" column="photo" nullable="true">
-      <options>
-        <option name="unsigned">1</option>
-      </options>
-    </field>
-    <field name="firstName" type="string" column="first_name" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="lastName" type="string" column="last_name" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="description" type="string" column="description" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-    <field name="inviteLink" type="string" column="invite_link" length="45" nullable="true">
-      <options>
-        <option name="fixed"/>
-      </options>
-    </field>
-  </entity>
+    <entity name="AppBundle\Entity\TbmChat" table="tbm_chat">
+        <indexes>
+            <index name="photo" columns="photo"/>
+        </indexes>
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="type" type="string" column="type" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="title" type="string" column="title" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="username" type="string" column="username" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="allMembersAreAdministrators" type="boolean" column="all_members_are_administrators" nullable="true"/>
+        <field name="photo" type="integer" column="photo" nullable="true">
+            <options>
+                <option name="unsigned">1</option>
+            </options>
+        </field>
+        <one-to-one field="photo" target-entity="TpmChatPhoto" inversed-by="chat">
+            <cascade>
+                <cascade-remove />
+            </cascade>
+            <join-column name="photo" referenced-column-name="id" on-delete="CASCADE" on-update="CASCADE"/>
+        </one-to-one>
+    
+        <field name="firstName" type="string" column="first_name" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="lastName" type="string" column="last_name" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="description" type="string" column="description" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="inviteLink" type="string" column="invite_link" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="chat" />
+        <one-to-many field="forward_from_me_messages" target-entity="TbmMessage" mapped-by="forward_from_chat" />
+    </entity>
 </doctrine-mapping>

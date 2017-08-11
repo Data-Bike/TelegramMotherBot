@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\TbmChat" table="tbm_chat">
+        <indexes>
+            <index name="from" columns="from"/>
+            <index name="chat" columns="chat"/>
+            <index name="forward_from" columns="forward_from"/>
+            <index name="forward_from_chat" columns="forward_from_chat"/>
+            <index name="reply_to_message" columns="reply_to_message"/>
+            <index name="audio" columns="audio"/>
+            <index name="document" columns="document"/>
+            <index name="game" columns="game"/>
+            <index name="sticker" columns="sticker"/>
+            <index name="video" columns="video"/>
+            <index name="voice" columns="voice"/>
+            <index name="video_note" columns="video_note"/>
+            <index name="contact" columns="contact"/>
+            <index name="location" columns="location"/>
+            <index name="venue" columns="venue"/>
+            <index name="new_chat_member" columns="new_chat_member"/>
+            <index name="left_chat_member" columns="left_chat_member"/>
+            <index name="pinned_message" columns="pinned_message"/>
+            <index name="invoice" columns="invoice"/>
+            <index name="successful_payment" columns="successful_payment"/>
+        </indexes>
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="message_id"/>
+        </unique-constraints>
+        <id name="message_id" type="integer" column="message_id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="forward_from_message_id" type="integer" column="forward_from_message_id" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="forward_date" type="integer" column="forward_date" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="edit_date" type="integer" column="edit_date" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="text" type="string" column="text" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="caption" type="string" column="caption" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="new_chat_title" type="string" column="new_chat_title" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="migrate_to_chat_id" type="integer" column="migrate_to_chat_id" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        <field name="migrate_from_chat_id" type="integer" column="migrate_from_chat_id" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
+        
+        <field name="delete_chat_photo" type="boolean" column="delete_chat_photo" nullable="true"/>
+        <field name="group_chat_created" type="boolean" column="group_chat_created" nullable="true"/>
+        <field name="supergroup_chat_created" type="boolean" column="supergroup_chat_created" nullable="true"/>
+    
+    
+        <many-to-one field="from" target-entity="TbmUser" inversed-by="messages">
+            <join-column name="from" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="chat" target-entity="TbmChat" inversed-by="messages">
+            <join-column name="chat" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="forward_from" target-entity="TbmUser" inversed-by="forward_from_me_messages">
+            <join-column name="forward_from" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="forward_from_chat" target-entity="TbmChat" inversed-by="forward_from_me_messages">
+            <join-column name="forward_from_chat" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="reply_to_message" target-entity="TbmMessage" inversed-by="reply_from_me_messages">
+            <join-column name="reply_to_message" referenced-column-name="message_id" />
+        </many-to-one>    
+        <many-to-one field="audio" target-entity="TbmAudio" inversed-by="messages">
+            <join-column name="audio" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="document" target-entity="TbmDocument" inversed-by="messages">
+            <join-column name="document" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="game" target-entity="TbmGame" inversed-by="messages">
+            <join-column name="game" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="sticker" target-entity="TbmSticker" inversed-by="messages">
+            <join-column name="sticker" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="video" target-entity="TbmVideo" inversed-by="messages">
+            <join-column name="video" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="voice" target-entity="TbmVoice" inversed-by="messages">
+            <join-column name="voice" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="video_note" target-entity="TbmVideonote" inversed-by="messages">
+            <join-column name="video_note" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="contact" target-entity="TbmContact" inversed-by="messages">
+            <join-column name="contact" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="location" target-entity="TbmLocation" inversed-by="messages">
+            <join-column name="location" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="venue" target-entity="TbmVenue" inversed-by="messages">
+            <join-column name="venue" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="new_chat_member" target-entity="TbmUser" inversed-by="new_chat_member_messages">
+            <join-column name="new_chat_member" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="left_chat_member" target-entity="TbmUser" inversed-by="left_chat_member_messages">
+            <join-column name="from" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="pinned_message" target-entity="TbmMessage" inversed-by="message_is_pinned">
+            <join-column name="pinned_message" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="invoice" target-entity="TbmInvoice" inversed-by="messages">
+            <join-column name="invoice" referenced-column-name="id" />
+        </many-to-one>    
+        <many-to-one field="successful_payment" target-entity="TbmSuccessfulPayment" inversed-by="messages">
+            <join-column name="successful_payment" referenced-column-name="id" />
+        </many-to-one>
+        
+        <one-to-many field="reply_from_me_messages" target-entity="TbmMessage" mapped-by="reply_to_message" />
+        <one-to-many field="message_is_pinned" target-entity="TbmMessage" mapped-by="pinned_message" />
+    
+    </entity>
+</doctrine-mapping>

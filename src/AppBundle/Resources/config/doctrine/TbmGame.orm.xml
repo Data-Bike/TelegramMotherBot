@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="AppBundle\Entity\TbmContact" table="tbm_contact">
-        <unique-constraints>
-            <unique-constraint name="id_UNIQUE" columns="id"/>
-        </unique-constraints>
+    <entity name="AppBundle\Entity\TbmVideo" table="tbm_video">
+        <indexes>
+            <index name="thumb" columns="thumb"/>
+        </indexes>
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="phoneNumber" type="string" column="phone_number" length="45" nullable="true">
+        <field name="title" type="string" column="title" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="firstName" type="string" column="first_name" length="45" nullable="true">
+        <field name="description" type="string" column="description" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="lastName" type="string" column="last_name" length="45" nullable="true">
+        <field name="text" type="string" column="text" length="45" nullable="true">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="userId" type="integer" column="user_id" nullable="true">
-            <options>
-                <option name="unsigned"/>
-            </options>
-        </field>
-        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="contact" />
+        <one-to-many field="messages" target-entity="TbmMessage" mapped-by="game" />
     </entity>
 </doctrine-mapping>
