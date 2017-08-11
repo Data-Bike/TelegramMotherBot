@@ -138,6 +138,50 @@
         
         <one-to-many field="reply_from_me_messages" target-entity="TbmMessage" mapped-by="reply_to_message" />
         <one-to-many field="message_is_pinned" target-entity="TbmMessage" mapped-by="pinned_message" />
+        
+        <many-to-many field="entities" target-entity="TbmMessageEntity" inversed-by="messages">
+            <join-table>
+                <join-columns>
+                    <join-column name="message_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="message_entity_id" referenced-column-name="id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+        
+        <many-to-many field="photo" target-entity="TbmPhotoSize" inversed-by="messages">
+            <join-table>
+                <join-columns>
+                    <join-column name="message_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="message_entity_id" referenced-column-name="id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+        
+        <many-to-many field="new_chat_members" target-entity="TbmUser" inversed-by="new_chat_member_messages">
+            <join-table>
+                <join-columns>
+                    <join-column name="message_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="message_entity_id" referenced-column-name="id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+        
+        <many-to-many field="new_chat_photo" target-entity="TbmPhotoSize" inversed-by="new_chat_photo_messages">
+            <join-table>
+                <join-columns>
+                    <join-column name="message_id" referenced-column-name="id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="message_entity_id" referenced-column-name="id"/>
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
     
     </entity>
 </doctrine-mapping>

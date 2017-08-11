@@ -7,11 +7,6 @@
         <id name="fileId" type="integer" column="file_id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="thumb" type="integer" column="thumb" nullable="true">
-            <options>
-                <option name="unsigned">1</option>
-            </options>
-        </field>
         <field name="fileName" type="string" column="file_name" length="45" nullable="true">
             <options>
                 <option name="fixed"/>
@@ -26,7 +21,10 @@
             <options>
                 <option name="fixed"/>
             </options>
-        </field>
+        </field>    
+        <many-to-one field="thumb" target-entity="TbmPhotoSize" inversed-by="document_thumbs">
+            <join-column name="thumb" referenced-column-name="id" />
+        </many-to-one>
         <one-to-many field="messages" target-entity="TbmMessage" mapped-by="document" />
     </entity>
 </doctrine-mapping>

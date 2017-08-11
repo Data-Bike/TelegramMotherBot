@@ -26,7 +26,10 @@
             <options>
                 <option name="unsigned"/>
             </options>
-        </field>
+        </field>    
+        <many-to-one field="thumb" target-entity="TbmPhotoSize" inversed-by="videonote_thumbs">
+            <join-column name="thumb" referenced-column-name="id" />
+        </many-to-one>
         <one-to-many field="messages" target-entity="TbmMessage" mapped-by="video_note" />
     </entity>
 </doctrine-mapping>

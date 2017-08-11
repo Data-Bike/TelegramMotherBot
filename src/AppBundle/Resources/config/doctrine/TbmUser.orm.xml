@@ -32,5 +32,7 @@
         <one-to-many field="forward_from_me_messages" target-entity="TbmMessage" mapped-by="forward_from" />
         <one-to-many field="new_chat_member_messages" target-entity="TbmMessage" mapped-by="new_chat_member" />
         <one-to-many field="left_chat_member" target-entity="TbmMessage" mapped-by="left_chat_member_messages" />
+        <one-to-many field="mention_message_entities" target-entity="TbmMessage" mapped-by="user" />
+        <many-to-many field="new_chat_member_messages" target-entity="TbmMessage" inversed-by="new_chat_members" />
     </entity>
 </doctrine-mapping>

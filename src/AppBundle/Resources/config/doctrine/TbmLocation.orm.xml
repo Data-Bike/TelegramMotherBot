@@ -10,5 +10,6 @@
         <field name="longitude" type="float" column="longitude" precision="10" scale="0" nullable="true"/>
         <field name="latitude" type="float" column="latitude" precision="10" scale="0" nullable="true"/>
         <one-to-many field="messages" target-entity="TbmMessage" mapped-by="location" />
+        <one-to-many field="venues" target-entity="TbmVenue" mapped-by="location" />
     </entity>
 </doctrine-mapping>

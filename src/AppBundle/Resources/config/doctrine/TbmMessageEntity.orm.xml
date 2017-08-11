@@ -4,42 +4,36 @@
         <indexes>
             <index name="thumb" columns="thumb"/>
         </indexes>
-        <id name="fileId" type="integer" column="file_id">
+        <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="width" type="integer" column="width" nullable="true">
-            <options>
-                <option name="unsigned"/>
-            </options>
-        </field>
-        <field name="height" type="integer" column="height" nullable="true">
-            <options>
-                <option name="unsigned"/>
-            </options>
-        </field>
-        <field name="duration" type="integer" column="duration" nullable="true">
-            <options>
-                <option name="unsigned"/>
-            </options>
-        </field>
-        <field name="thumb" type="integer" column="thumb" nullable="true">
-            <options>
-                <option name="unsigned">1</option>
-            </options>
-        </field>
-        <field name="mimeType" type="string" column="mime_type" length="45" nullable="true">
+        <field name="type" type="string" column="type" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="fileSize" type="integer" column="file_size" nullable="true">
+        <field name="offset" type="integer" column="offset" nullable="false">
             <options>
                 <option name="unsigned"/>
             </options>
-        </field>    
-        <many-to-one field="thumb" target-entity="TbmPhotoSize" inversed-by="video_thumbs">
-            <join-column name="thumb" referenced-column-name="id" />
+        </field>
+        <field name="length" type="integer" column="length" nullable="false">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>        
+        <field name="url" type="string" column="url" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>   
+         
+        <many-to-one field="user" target-entity="TbmUser" inversed-by="mention_message_entities">
+            <join-column name="user" referenced-column-name="id" />
         </many-to-one>
+        
+        
+        <many-to-many field="messages" target-entity="TbmMessage" inversed-by="entities" />
         <one-to-many field="messages" target-entity="TbmMessage" mapped-by="video" />
     </entity>
 </doctrine-mapping>

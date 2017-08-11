@@ -22,5 +22,10 @@
                 <option name="unsigned"/>
             </options>
         </field>
+        <many-to-many field="messages" target-entity="TbmMessage" inversed-by="photo" />
+        <many-to-many field="new_chat_photo_messages" target-entity="TbmMessage" inversed-by="new_chat_photo" />
+        <one-to-many field="document_thumbs" target-entity="TbmDocument" mapped-by="thumb" />
+        <one-to-many field="video_thumbs" target-entity="TbmVideo" mapped-by="thumb" />
+        <one-to-many field="videonote_thumbs" target-entity="TbmVideonote" mapped-by="thumb" />
     </entity>
 </doctrine-mapping>
