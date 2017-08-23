@@ -10,7 +10,7 @@
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="type" type="string" column="type" length="45" nullable="true">
+        <field name="type" type="string" column="type" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>

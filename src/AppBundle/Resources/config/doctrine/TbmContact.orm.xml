@@ -7,12 +7,12 @@
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="phoneNumber" type="string" column="phone_number" length="45" nullable="true">
+        <field name="phoneNumber" type="string" column="phone_number" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>
         </field>
-        <field name="firstName" type="string" column="first_name" length="45" nullable="true">
+        <field name="firstName" type="string" column="first_name" length="45" nullable="false">
             <options>
                 <option name="fixed"/>
             </options>

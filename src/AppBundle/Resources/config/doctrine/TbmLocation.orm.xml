@@ -7,8 +7,8 @@
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="longitude" type="float" column="longitude" precision="10" scale="0" nullable="true"/>
-        <field name="latitude" type="float" column="latitude" precision="10" scale="0" nullable="true"/>
+        <field name="longitude" type="float" column="longitude" precision="10" scale="0" nullable="false"/>
+        <field name="latitude" type="float" column="latitude" precision="10" scale="0" nullable="false"/>
         <one-to-many field="messages" target-entity="TbmMessage" mapped-by="location" />
         <one-to-many field="venues" target-entity="TbmVenue" mapped-by="location" />
     </entity>

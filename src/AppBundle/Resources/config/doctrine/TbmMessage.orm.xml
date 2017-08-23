@@ -39,6 +39,11 @@
                 <option name="unsigned"/>
             </options>
         </field>
+        <field name="date" type="integer" column="date" nullable="true">
+            <options>
+                <option name="unsigned"/>
+            </options>
+        </field>
         <field name="edit_date" type="integer" column="edit_date" nullable="true">
             <options>
                 <option name="unsigned"/>
@@ -73,6 +78,7 @@
         <field name="delete_chat_photo" type="boolean" column="delete_chat_photo" nullable="true"/>
         <field name="group_chat_created" type="boolean" column="group_chat_created" nullable="true"/>
         <field name="supergroup_chat_created" type="boolean" column="supergroup_chat_created" nullable="true"/>
+        <field name="channel_chat_created" type="boolean" column="channel_chat_created" nullable="true"/>
     
     
         <many-to-one field="from" target-entity="TbmUser" inversed-by="messages">

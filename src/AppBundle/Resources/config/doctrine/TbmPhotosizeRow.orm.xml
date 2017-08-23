@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="AppBundle\Entity\TbmUserprofilephotos" table="tbm_userprofilephotos">
+    <entity name="AppBundle\Entity\TbmPhotosizeRow" table="tbm_photosize_row">
         <unique-constraints>
             <unique-constraint name="id_UNIQUE" columns="id"/>
         </unique-constraints>
         <id name="id" type="integer" column="id">
             <generator strategy="IDENTITY"/>
         </id>
-        <field name="totalCount" type="integer" column="total_count" nullable="true">
+        <field name="row" type="integer" column="row" nullable="false">
             <options>
                 <option name="unsigned"/>
             </options>
         </field>
-        <many-to-one field="photosRow" target-entity="TbmPhotosizeRow" inversed-by="userprofilephotos">
-            <join-column name="photosRow" referenced-column-name="id" />
-        </many-to-one> 
+        <one-to-many field="userprofilephotos" target-entity="TbmUserprofilephotos" mapped-by="photosRow" />
     </entity>
 </doctrine-mapping>
