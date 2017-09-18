@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\SendMessage" table="tbm_sendmessage"> 
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="chat_id" type="string" column="chat_id" length="45" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>  
+        <field name="text" type="string" column="text" length="45" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="parse_mode" type="string" column="parse_mode" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="disable_web_page_preview" type="boolean" column="disable_web_page_preview" nullable="true"/>
+        <field name="disable_notification" type="boolean" column="disable_notification" nullable="true"/>
+        <field name="reply_to_message_id" type="integer" column="reply_to_message_id" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+                <field name="reply_markup" type="string" column="reply_markup" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>  
+    </entity>
+</doctrine-mapping>
