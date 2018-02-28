@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\TbmRestrictChatMember" table="tbm_restrictchatmember">
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <field name="chat_id" type="string" column="chat_id" length="45" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="user_id" type="integer" column="user_id" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="until_date" type="integer" column="until_date" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="can_send_messages" type="boolean" column="can_send_messages" nullable="true"/>
+        <field name="can_send_media_messages" type="boolean" column="can_send_media_messages" nullable="true"/>
+        <field name="can_send_other_messages" type="boolean" column="can_send_other_messages" nullable="true"/>
+        <field name="can_add_web_page_previews" type="boolean" column="can_add_web_page_previews" nullable="true"/>
+    </entity>
+</doctrine-mapping>

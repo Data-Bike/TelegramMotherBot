@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\TbmPromoteChatMember" table="tbm_promotechatmember">
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <field name="chat_id" type="string" column="chat_id" length="45" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="user_id" type="integer" column="user_id" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="can_change_info" type="boolean" column="can_change_info" nullable="true"/>
+        <field name="can_post_messages" type="boolean" column="can_post_messages" nullable="true"/>
+        <field name="can_edit_messages" type="boolean" column="can_edit_messages" nullable="true"/>
+        <field name="can_delete_messages" type="boolean" column="can_delete_messages" nullable="true"/>
+        <field name="can_invite_users" type="boolean" column="can_invite_users" nullable="true"/>
+        <field name="can_restrict_members" type="boolean" column="can_restrict_members" nullable="true"/>
+        <field name="can_pin_messages" type="boolean" column="can_pin_messages" nullable="true"/>
+        <field name="can_promote_members" type="boolean" column="can_promote_members" nullable="true"/>
+    </entity>
+</doctrine-mapping>
