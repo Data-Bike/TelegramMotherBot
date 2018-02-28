@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="AppBundle\Entity\TbmAnswerCallbackQuery" table="tbm_answercallbackquery">
+        <unique-constraints>
+            <unique-constraint name="id_UNIQUE" columns="id"/>
+        </unique-constraints>
+        <field name="callback_query_id" type="string" column="callback_query_id" length="45" nullable="false">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="text" type="string" column="text" length="255" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="url" type="string" column="url" length="45" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="cache_time" type="integer" column="cache_time" nullable="true">
+            <options>
+                <option name="fixed"/>
+            </options>
+        </field>
+        <field name="show_alert" type="boolean" column="show_alert" nullable="true"/>
+    </entity>
+</doctrine-mapping>
